@@ -7,27 +7,39 @@
  * helpers.c
 */
 
+#define _XOPEN_SOURCE 500
+
 /*
- * Loads the Initial Board followed by a Welcome Message
+ * Minimum and Maximum Dimension
 */
-int load(void);
+#define DIM_MIN 3
+#define DIM_MAX 9
+
+/*
+ * Initialization of the Board
+*/
+void init(int n, int*);
+
+/*
+ * Prints a Welcome Message
+*/
+void greet(void);
 
 /*
  * Loads the Modified Board
 */
-int show(int*);
-
-/*
- * Returns Integer from stdin
-*/
-int GetInt(void);
+void show(int, int*);
 
 /*
  * Clear the console before printing the Board
 */
-int clear(void);
+void clear(void);
 
 /*
  * Checks if a user wins
+ * Returns 1 if X wins
+ * Returns 2 if O wins
+ * Returns -1 if draw
+ * Returns 0 otherwise
 */
-int check(int*);
+int check(int, int*);
