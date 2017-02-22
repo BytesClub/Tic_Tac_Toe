@@ -6,3 +6,28 @@
  *
  * helpers.c
 */
+
+/*
+ * Loads the Initial Board followed by a Welcome Message
+*/
+int load(void);
+
+/*
+ * Loads the Modified Board
+*/
+int show(int*);
+
+/*
+ * Returns Integer from stdin
+*/
+int GetInt(void);
+
+/*
+ * Clear the console before printing the Board
+*/
+int clear(void);
+
+/*
+ * Checks if a user wins
+*/
+int check(int*);
