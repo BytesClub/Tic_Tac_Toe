@@ -7,10 +7,6 @@
  * main.c
 */
  
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
 #include "helper.h"
 
 int main(int argc, char* argv[])
@@ -23,18 +19,20 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	
-	unsigned int n = atoi(argv[1]);
+	int n = atoi(argv[1]);
 	int f = 0;
+	
+	printf("%u", n);
 	
 	greet();
 	while(!f)
 	{
 		clear();
-		show();
+		show(n, &n);
 		/*
 		 * TODO: Ask user for the position
 		*/
-		f = check()
+		f = check(n, &n);
 	}
 	
 	/*

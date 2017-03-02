@@ -9,22 +9,22 @@
 CC = gcc
 
 # Flags for Compiler
-CFLAGS = -ggdb -std=C11 -Werror -Wall
+CFLAGS = -ggdb -Werror -Wall -std=c11
 
 # Executable
-EXE = a.out
+EXE = play
 
 # Header File(s)
 HDRS = helper.h
 
 # Library File(s)
-LIBS = $(HDRS:.h = .c)
+LIBS = helper.c
 
 # Source File(s)
 SRCS = main.c
 
 # Object File(s)
-OBJS = $(SRCS:.c = .o)
+OBJS = $(SRCS:.c=.o)
 
 # Default Target
 main: $(OBJS) $(HDRS) $(LIBS) Makefile

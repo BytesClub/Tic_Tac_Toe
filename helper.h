@@ -4,10 +4,23 @@
  * GitHub Repository: https://github.com/BytesClub/Tic_Tac_Toe
  * Copyright (C) BytesClub 2017, MIT 
  *
- * helpers.c
+ * helper.c
 */
 
 #define _XOPEN_SOURCE 500
+
+#ifndef __helper_h
+#define __helper_h
+
+#ifndef __stdio_h
+#include <stdio.h>
+#endif
+#ifndef __stdlib_h
+#include <stdlib.h>
+#endif
+#ifndef __unistd_h
+#include <unistd.h>
+#endif
 
 /*
  * Minimum and Maximum Dimension
@@ -43,3 +56,5 @@ void clear(void);
  * Returns 0 otherwise
 */
 int check(int, int*);
+
+#endif
