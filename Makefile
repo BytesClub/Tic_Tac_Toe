@@ -15,17 +15,20 @@ CFLAGS = -ggdb -Werror -Wall
 EXE = a.out
 
 # Header File(s)
-HDRS = helpers.h
+HDRS = helper.h
+
+# Library File(s)
+LIBS = $(HDRS:.h = .c)
 
 # Source File(s)
 SRCS = main.c
 
 # Object File(s)
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c = .o)
 
 # Default Target
-main: $(OBJS) $(HDRS) Makefile
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJS) $(LIBS)
+main: $(OBJS) $(HDRS) $(LIBS) Makefile
+	$(CC) $(CFLAGS) -o $(EXE) $(OBJS) $(HDRS) $(LIBS)
 
 # Dependencies 
 $(OBJS): $(HDRS) Makefile

@@ -11,14 +11,14 @@
 
 void greet(void)
 {
-	clear();
-    printf("WELCOME TO GAME OF FIFTEEN\n");
+    clear();
+    printf("WELCOME TO GAME OF TIC_TAC_TOE\n");
     usleep(2000000);
 }
 
 void init(int n, int*)
 {
-	// TODO
+    // TODO
 }
 
 void show(int, int*)
@@ -28,12 +28,12 @@ void show(int, int*)
 
 void clear(void)
 {
-	printf("\033[2J");
+    printf("\033[2J");
     printf("\033[%d;%dH", 0, 0);
 }
 
 int check(int n, int* A)
 {
-	// TODO
-	return 0;
+    // TODO
+    return 0;
 }
