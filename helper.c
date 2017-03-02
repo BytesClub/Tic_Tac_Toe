@@ -29,10 +29,10 @@ static int val(int d)
 void show(int n, int* A)
 {
     for(int i = 0; i < n; i++){
-        for(int j = 0; j < n && (!j || putchar('|')); j++)
-	    printf(" %c ", val(A[i * n + j]));
-	for(int j = 0; j < n; j++)
-	    putchar('-');
+        for(int j = 0; (j < n && (!j || putchar('|'))) || putchar('\n'); j++)
+			printf(" %c ", val(A[i * n + j]));
+		for(int j = 0; j < n || !putchar('\n'); j++)
+			printf("----");
     }
 }
 
@@ -45,5 +45,5 @@ void clear(void)
 int check(int n, int* A)
 {
     // TODO
-    return 0;
+    return 1;
 }
