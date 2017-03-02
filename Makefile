@@ -9,7 +9,7 @@
 CC = gcc
 
 # Flags for Compiler
-CFLAGS = -ggdb -Werror -Wall
+CFLAGS = -ggdb -std=C11 -Werror -Wall
 
 # Executable
 EXE = a.out

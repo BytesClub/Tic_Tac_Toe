@@ -16,14 +16,19 @@ void greet(void)
     usleep(2000000);
 }
 
-void init(int n, int*)
+void init(int n, int* A)
 {
     // TODO
 }
 
-void show(int, int*)
+void show(int n, int* A)
 {
-	
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n && (!j || putchar('|')); j++)
+	    printf(" %c ", val(A[i * n + j]));
+	for(int j = 0; j < n; j++)
+	    putchar('-');
+    }
 }
 
 void clear(void)
