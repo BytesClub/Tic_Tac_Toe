@@ -18,7 +18,7 @@ void greet(void)
 
 void init(int n, int* A)
 {
-    // TODO
+    // TODO : Initialize the board.
 }
 
 static int val(int d)
@@ -44,6 +44,6 @@ void clear(void)
 
 int check(int n, int* A)
 {
-    // TODO
+    // TODO : Checks if a user wins
     return 1;
 }
