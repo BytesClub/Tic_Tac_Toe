@@ -3,14 +3,14 @@ A simple Tic_Tac_Toe implementation in C
 Copyright (C) BytesClub 2017, MIT
 
 ### Table of Content
-[Objectives](#Objectives)
-[Recommended Reading]
-[Academic Honesty]
-[Getting Started]
-[The Gameplay]
-[Helper.H]
-[Your task]
-[How to Submit]
+[Objectives](#objectives)
+[Recommended Reading](#recommended-reading)
+[Academic Honesty](#academic-honesty)
+[Getting Started](#getting-started)
+[The Gameplay](#the-gameplay)
+[Helper.H](#helperh)
+[Your task](#your-task)
+[How to Submit](#how-to-submit)
 
 ### Objectives
 * Getting comfortable with Linux Environment
@@ -84,6 +84,8 @@ $ make main
 * Now your repository will have a binary executable file named as `play`
 * Open `helper.h` in your text editor and understand which functions are already given.
 * Open `helper.c` to view the implementation of those function done previously
+
+### The Gameplay
 
 ### Helper.H
 
