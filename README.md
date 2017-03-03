@@ -70,9 +70,10 @@ Copyright (C) BytesClub 2017, MIT
 * Viewing another’s solution to a problem set’s problem and basing your own solution on it.
 
 ### Getting Started
+* Fork the repository to your profile.
 * Open your terminal window and run the following
 ```
-$ git clone git@github.com:BytesClub/Tic_Tac_Toe.git
+$ git clone git@github.com:<your_profile>/Tic_Tac_Toe.git
 $ cd Tic_Tac_Toe/
 ```
 * Make sure your local repository contains every file including this README
@@ -86,11 +87,34 @@ $ make main
 * Open `helper.c` to view the implementation of those function done previously
 
 ### The Gameplay
+Open `main.c` in your text editor and you will see the following
+```
+int main(int argc, char *argv[])
+```
+This line indicates that the program expects **Command-Line Arguments**. Actually, the program expects an integer as it's argument. This integer represents the number of rows/columns in the board. Here we used a function `atoi()` which converts a string into equivalent integer.
 
 ### Helper.H
 
 ### Your Task
 
 ### How To Submit
+* Update your local repository with latest in the Club.
+```
+$ git pull
+```
+* Complete the implementation of the functions mentioned as **TODO**
+* Complete the main function.
+* Compile and execute to be sure that it's working.
+* Execute the following
+```
+$ git add .
+$ git commit
+shortlog: commit title
+commit description
+fixes: #issue_number
+$ git push origin/master
+```
+* Create a `Pull Request` to the Club repository.
+* Wait for a response from Club Heads.
 
 #### Happy Coding :)
