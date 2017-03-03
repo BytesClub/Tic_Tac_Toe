@@ -3,14 +3,14 @@ A simple Tic_Tac_Toe implementation in C
 Copyright (C) BytesClub 2017, MIT
 
 ### Table of Content
-[Objectives](#objectives)
-[Recommended Reading](#recommended-reading)
-[Academic Honesty](#academic-honesty)
-[Getting Started](#getting-started)
-[The Gameplay](#the-gameplay)
-[Helper.H](#helperh)
-[Your task](#your-task)
-[How to Submit](#how-to-submit)
+1. [Objectives](#objectives)
+2. [Recommended Reading](#recommended-reading)
+3.[Academic Honesty](#academic-honesty)
+4. [Getting Started](#getting-started)
+5. [The Gameplay](#the-gameplay)
+6. [Helper.H](#helperh)
+7. [Your task](#your-task)
+8. [How to Submit](#how-to-submit)
 
 ### Objectives
 * Getting comfortable with Linux Environment
