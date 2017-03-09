@@ -92,10 +92,27 @@ Open `main.c` in your text editor and you will see the following
 int main(int argc, char *argv[])
 ```
 This line indicates that the program expects **Command-Line Arguments**. Actually, the program expects an integer as it's argument. This integer represents the number of rows/columns in the board. Here we used a function `atoi()` which converts a string into equivalent integer.
+If you run the following
+```
+$ ./play 3
+```
+It will produce following result
+```
+WELCOME TO GAME OF TIC_TAC_TOE
+
+    |    |    
+--------------
+    |    |
+--------------
+    |    |
+```
+The program will ask the user for the position to put **`X`** or **`O`** and will act accordingly. In the end it will announce the winner, if any, or if it's a tie.
 
 ### Helper.H
+Navigate to `helper.h` and see the function prototypes given to you and their functionalities. You can also open `helper.c` and see the implementation of some of the functions. What happening during compile-time is the file `helper.c` is being compiled seperately and later being linked to `main.c` via `helper.h`. You will learn more about this [here](https://www.dartmouth.edu/~rc/classes/softdev_linux/complex_compile.html).
 
 ### Your Task
+Navigate to `hepler.c` and see the function mentioned as **`TODO`** (or you can view them in `Issue` tab). Your task is to complete the implementation of those methods and applying/calling them from your _**main**_ function. You have to create a simple data-structure to hold the board and modify according to the input by user. So that, after completion and compilation afterward it will work fine!
 
 ### How To Submit
 * Update your local repository with latest in the Club.
