@@ -5,7 +5,7 @@ Copyright (C) BytesClub 2017, MIT
 ### Table of Content
 1. [Objectives](#objectives)
 2. [Recommended Reading](#recommended-reading)
-3.[Academic Honesty](#academic-honesty)
+3. [Academic Honesty](#academic-honesty)
 4. [Getting Started](#getting-started)
 5. [The Gameplay](#the-gameplay)
 6. [Helper.H](#helperh)
@@ -81,7 +81,7 @@ $ cd Tic_Tac_Toe/
 ```
 $ make main
 ```
-   *If it gives any immidiately notify by registering an issue*
+   *If it gives any error, immidiately notify by registering an issue*
 * Now your repository will have a binary executable file named as `play`
 * Open `helper.h` in your text editor and understand which functions are already given.
 * Open `helper.c` to view the implementation of those function done previously
