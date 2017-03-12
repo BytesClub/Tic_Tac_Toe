@@ -9,7 +9,7 @@
 CC = gcc
 
 # Flags for Compiler
-CFLAGS = -ggdb -Werror -Wall -std=c11
+CFLAGS = -fsanitize=integer -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow
 
 # Executable
 EXE = play
