@@ -23,6 +23,7 @@ void init(int n, int* A)
 
 static int val(int d)
 {
+	// TODO : Add Value against board
 	return '\0';
 }
 
