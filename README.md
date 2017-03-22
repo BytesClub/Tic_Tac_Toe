@@ -85,6 +85,7 @@ $ make main
 * Now your repository will have a binary executable file named as `play`
 * Open `helper.h` in your text editor and understand which functions are already given.
 * Open `helper.c` to view the implementation of those function done previously
+* _Download [ghi](https://github.com/stephencelis/ghi) and get notified about GitHub Issues on your terminal (Optional)_
 
 ### The Gameplay
 Open `main.c` in your text editor and you will see the following
@@ -117,7 +118,10 @@ Navigate to `hepler.c` and see the function mentioned as **`TODO`** (or you can 
 ### How To Submit
 * Update your local repository with latest in the Club.
 ```
-$ git pull
+$ git remote add upstream https://github.com/BytesClub/Tic_Tac_Toe.git
+$ git fetch upstream
+$ git checkout master
+$ git rebase upstream/master
 ```
 * Complete the implementation of the functions mentioned as **TODO**
 * Complete the main function.
