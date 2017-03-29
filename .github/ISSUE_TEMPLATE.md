@@ -12,15 +12,6 @@ Tell us what happens instead
 ### Server configuration
 **Operating system**:
 
-**Web server:**
+**Compiler**:
 
-**Database:**
-
-**PHP version:**
-
-**phpMyAdmin version:**
-
-### Client configuration
-**Browser:**
-
-**Operating system:**
+**Compiler version**:
