@@ -1,4 +1,10 @@
+# Ignore all files/directories
+*
+# Allow directories
+!*/*
+# Allow File with Extension
+!*.*
+# Ignore Binary Files
 *.out
 *.exe
 *.o
-
