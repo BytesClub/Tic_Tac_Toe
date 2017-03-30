@@ -40,14 +40,18 @@ int main(int argc, char* argv[])
 	 */
 
 	int result=f;
-	if(result==1)
+	if(result==1){
 		printf(" Congrats 'X' wins\n");
-	else if(result==2)
+	}
+	else if(result==2){
 		printf("Congrats 'O' wins\n");
-	else if(result==-1)
+	}
+	else if(result==-1){
 		printf(" GAME DRAWN!!!!!\n");
-	else 
-		printf("!!! GAME incomplete!!!\n");   	
+	}
+	else {
+		printf("!!! GAME incomplete!!!\n");
+	}   	
 
 
 
