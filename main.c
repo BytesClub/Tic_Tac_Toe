@@ -38,6 +38,16 @@ int main(int argc, char* argv[])
 	/*
 	 * TODO: Print if its a win or draw
 	*/
+	if(f==1)
+	printf(" Congrats X wins\n");
+  	else if(f==2)
+	printf("Congrats O wins\n");
+ 	else if(f==-1)
+	printf(" GAME DRAWN!!!!!\n");
+        else 
+        printf("!!! GAME incomplete!!!\n");   	
+         
+	
 	
 	return 0;
 }
