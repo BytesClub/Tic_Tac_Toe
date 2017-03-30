@@ -133,6 +133,7 @@ $ git commit
 shortlog: commit title
 commit description
 fixes: #issue_number
+signed-off by: user_name<email>
 $ git push origin/master
 ```
 * Create a `Pull Request` to the Club repository.
