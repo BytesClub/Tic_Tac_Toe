@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
 		/*
 		 * TODO: Ask user for the position
 		 */
+
 		result = check(n, ARR);
 	}
 	if(result==1){
@@ -46,8 +47,7 @@ int main(int argc, char* argv[])
 	}
 	else {
 		printf("!!! Match Incomplete!!!\n");
-	}   	
-
+	}
 
 
 	return 0;
