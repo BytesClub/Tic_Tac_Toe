@@ -20,37 +20,32 @@ int main(int argc, char* argv[])
 	}
 
 	int n = atoi(argv[1]);
-	int f = 0;
+	int result= 0;
+	char ARR[n][n];
 
 	printf("%u", n);
 
 	greet();
-	while(!f)
+	while(!result)
 	{
 		clear();
 		show(n, &n);
 		/*
 		 * TODO: Ask user for the position
 		 */
-		f = check(n, &n);
+		result = check(n, ARR);
 	}
-
-	/*
-	 * TODO: Print if its a win or draw
-	 */
-
-	int result=f;
 	if(result==1){
-		printf(" Congrats 'X' wins\n");
+		printf(" Congrats Player1 ('X') wins\n");
 	}
 	else if(result==2){
-		printf("Congrats 'O' wins\n");
+		printf("Congrats Player2 ('O') wins\n");
 	}
 	else if(result==-1){
-		printf(" GAME DRAWN!!!!!\n");
+		printf(" Match Tie !!!!!\n");
 	}
 	else {
-		printf("!!! GAME incomplete!!!\n");
+		printf("!!! Match Incomplete!!!\n");
 	}   	
 
 
