@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 	else {
 		printf("!!! Match Incomplete!!!\n");
 	}
-
+        printf("Thanks for playing !!!!\n");
 
 	return 0;
 }
