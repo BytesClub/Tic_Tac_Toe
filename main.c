@@ -42,13 +42,10 @@ int main(int argc, char* argv[])
 	else if(result==2){
 		printf("Congrats Player2 ('O') wins\n");
 	}
-	else if(result==-1){
+	if(result==3){
 		printf(" Match Tie !!!!!\n");
 	}
-	else {
-		printf("!!! Match Incomplete!!!\n");
-	}
-        printf("Thanks for playing Tic Tac Toe !!!!\n");
+
 
 	return 0;
 }

@@ -155,7 +155,7 @@ int check(int s , char (*C)[n])
 		}
 	}
 	if(flag_2==1)
-		return -1;
+		return 3;
 
 	else
 		return 0;
