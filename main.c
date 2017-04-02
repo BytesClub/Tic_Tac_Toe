@@ -25,10 +25,23 @@ int main(int argc, char* argv[])
 	printf("%u", n);
 	
 	greet();
+        int row=0,col=0;
 	while(!f)
 	{
 		clear();
-		show(n, &n);
+                printf("\nPlayer 1: Enter Postion:\nRow Number: ");
+                row=getchar();
+                printf("\nColumn Number: ");
+                col=getchar();
+		ARR[row][col]='X';
+
+                printf("\nPlayer 2: Enter Postion:\nRow Number: ");
+                row=getchar();
+                printf("\nColumn Number: ");
+                col=getchar();
+                ARR[row][col]='O';
+                
+ 		show(n, &n);
 		/*
 		 * TODO: Ask user for the position
 		*/
