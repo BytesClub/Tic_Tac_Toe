@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 	while(!f)
 	{
 		clear();
+
                 printf("\nPlayer 1: Enter Postion:\nRow Number: ");
                 row=getchar();
                 printf("\nColumn Number: ");
