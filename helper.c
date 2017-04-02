@@ -16,11 +16,34 @@ void greet(void)
     sleep(5);
 }
 
-void init(int n, int* A)
+void init(int n, int *arr)
 {
-    // TODO : Initialize the board.
-}
 
+	int i,j;
+
+        for(i=0;i<n;i++)				/* For row formation */
+        {
+                for(j=0;j<n;j++)			/* For column formation */
+                {
+                        printf(" %c ",arr[i*n+j]);
+                        while(j!=n-1)
+                        {
+                                printf("|");
+                                break;
+                        }
+                }
+        printf("\n");
+        while(i!=n-1)
+        {
+                for(j=0;j<n;j++)
+                {
+                        printf("----");
+                }
+        break;
+        }
+        printf("\n");
+        }
+}
 static int val(int d)
 {
 	// TODO : Add Value against board
