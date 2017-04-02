@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 	else if(result==2){
 		printf("Congrats Player2 ('O') wins\n");
 	}
-	else(result==3){
+	else{
 		printf(" Match Tie !!!!!\n");
 	}
 
