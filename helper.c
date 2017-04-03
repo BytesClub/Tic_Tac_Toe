@@ -93,8 +93,6 @@ int check(int s , char (*C)[n])
 
 			if(C[0][column]==player2)
 				return 2;
-
-
 		}
 	}
 	//checking for diagonals//
@@ -156,9 +154,6 @@ int check(int s , char (*C)[n])
 	}
 	if(flag_2==1)
 		return 3;
-
 	else
 		return 0;
-
-
 }

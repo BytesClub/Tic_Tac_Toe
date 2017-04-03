@@ -9,7 +9,7 @@ Tell us what should happen
 ### Actual behaviour
 Tell us what happens instead
 
-### Server configuration
+### Environment configuration
 **Operating system**:
 
 **Compiler**:
