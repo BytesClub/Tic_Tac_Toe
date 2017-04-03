@@ -18,6 +18,10 @@ int main(int argc, char* argv[])
 		printf("Usage: %s n\n", argv[0]);
 		return 1;
 	}
+	if(argc<2){
+		printf("Negative arguments are not allowed!");
+		return 1;
+	}
 	
 	int n = atoi(argv[1]);
 	int f = 0;
