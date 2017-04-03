@@ -16,9 +16,9 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	int n = atoi(argv[1]);
-	int result= 0;
-	char ARR[n][n];
+	int N = atoi(argv[1]);
+	int result = 0, row, col;
+	char ARR[N][N];
 
 	init();
 	greet();
@@ -27,23 +27,23 @@ int main(int argc, char* argv[])
 	{
 		clear();
 		printf("\nPlayer 1: Enter Postion:\nRow Number: ");
-		row=getchar();
+		row = getchar();
 		printf("\nColumn Number: ");
-		col=getchar();
+		col = getchar();
 		ARR[row][col]='X';
 
 		printf("\nPlayer 2: Enter Postion:\nRow Number: ");
-		row=getchar();
+		row = getchar();
 		printf("\nColumn Number: ");
-		col=getchar();
+		col = getchar();
 		ARR[row][col]='O';
 
  		show(n, &n);
-		result = check(n, ARR);
+		result = check(N, ARR);
 	}
 	
 	if(result == 1){
-		printf(" Congrats Player1 ('X') wins\n");
+		printf("Congrats Player1 ('X') wins\n");
 	}
 	else if(result == 2){
 		printf("Congrats Player2 ('O') wins\n");
