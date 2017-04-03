@@ -5,28 +5,28 @@
  * Copyright (C) BytesClub 2017, MIT 
  *
  * main.c
-*/
- 
+ */
+
 #include "helper.h"
 
 int main(int argc, char* argv[])
 {
 	/*
 	 * TODO: Validating input arguments
-	*/
+	 */
 	if(argc != 2){
 		printf("Usage: %s n\n", argv[0]);
 		return 1;
 	}
-	
+
 	int n = atoi(argv[1]);
-	int f = 0;
-	
+	int result= 0;
+	char ARR[n][n];
+
 	printf("%u", n);
-	
+
 	greet();
-        int row=0,col=0;
-	while(!f)
+  while(!result)
 	{
 		clear();
                 printf("\nPlayer 1: Enter Postion:\nRow Number: ");
@@ -44,13 +44,20 @@ int main(int argc, char* argv[])
  		show(n, &n);
 		/*
 		 * TODO: Ask user for the position
-		*/
-		f = check(n, &n);
+		 */
+
+		result = check(n, ARR);
 	}
-	
-	/*
-	 * TODO: Print if its a win or draw
-	*/
-	
+	if(result==1){
+		printf(" Congrats Player1 ('X') wins\n");
+	}
+	else if(result==2){
+		printf("Congrats Player2 ('O') wins\n");
+	}
+	else{
+		printf(" Match Tie !!!!!\n");
+	}
+
+
 	return 0;
 }
