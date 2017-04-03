@@ -11,9 +11,6 @@
 
 int main(int argc, char* argv[])
 {
-	/*
-	 * TODO: Validating input arguments
-	 */
 	if(argc != 2){
 		printf("Usage: %s n\n", argv[0]);
 		return 1;
@@ -23,41 +20,37 @@ int main(int argc, char* argv[])
 	int result= 0;
 	char ARR[n][n];
 
-	printf("%u", n);
-
+	init();
 	greet();
-  while(!result)
+  
+	while(!result)
 	{
 		clear();
-                printf("\nPlayer 1: Enter Postion:\nRow Number: ");
-                row=getchar();
-                printf("\nColumn Number: ");
-                col=getchar();
+		printf("\nPlayer 1: Enter Postion:\nRow Number: ");
+		row=getchar();
+		printf("\nColumn Number: ");
+		col=getchar();
 		ARR[row][col]='X';
 
-                printf("\nPlayer 2: Enter Postion:\nRow Number: ");
-                row=getchar();
-                printf("\nColumn Number: ");
-                col=getchar();
-                ARR[row][col]='O';
-                
- 		show(n, &n);
-		/*
-		 * TODO: Ask user for the position
-		 */
+		printf("\nPlayer 2: Enter Postion:\nRow Number: ");
+		row=getchar();
+		printf("\nColumn Number: ");
+		col=getchar();
+		ARR[row][col]='O';
 
+ 		show(n, &n);
 		result = check(n, ARR);
 	}
-	if(result==1){
+	
+	if(result == 1){
 		printf(" Congrats Player1 ('X') wins\n");
 	}
-	else if(result==2){
+	else if(result == 2){
 		printf("Congrats Player2 ('O') wins\n");
 	}
 	else{
 		printf(" Match Tie !!!!!\n");
 	}
-
-
+	
 	return 0;
 }
