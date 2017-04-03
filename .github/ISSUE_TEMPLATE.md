@@ -3,10 +3,10 @@
 2.
 3.
 
-### Expected behaviour
+### Expected behavior
 Tell us what should happen
 
-### Actual behaviour
+### Actual behavior
 Tell us what happens instead
 
 ### Environment configuration

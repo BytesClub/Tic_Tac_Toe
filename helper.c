@@ -24,17 +24,11 @@ void init(int n, int* A)
 	// TODO : Initialize the board.
 }
 
-static int val(int d)
-{
-	// TODO : Add Value against board
-	return '\0';
-}
-
 void show(int n, int* A)
 {
 	for(int i = 0; i < n; i++){
 		for(int j = 0; (j < n && (!j || putchar('|'))) || putchar('\n'); j++)
-			printf(" %c ", val(A[i * n + j]));
+			printf(" %c ", A[i * n + j]);
 		for(int j = 0; j < n || !putchar('\n'); j++)
 			printf("----");
 	}
