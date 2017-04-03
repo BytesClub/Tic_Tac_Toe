@@ -134,8 +134,9 @@ shortlog: commit title
 commit description
 fixes: #issue_number
 signed-off by: user_name<email>
-$ git push origin/master
+$ git push origin master
 ```
+* **Your commit should not contain the binary executable file**
 * Create a `Pull Request` to the Club repository.
 * Wait for a response from Club Heads.
 
