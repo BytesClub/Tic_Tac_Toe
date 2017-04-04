@@ -17,12 +17,15 @@ int main(int argc, char* argv[])
 	}
 
 	int N = atoi(argv[1]);
+	/*
+		TODO: Validate N (DIM_MIN <= N <= DIM_MAX)
+	*/
 	int result = 0, row, col;
 	char ARR[N][N];
 
-	init();
+	init(N, (char*)ARR);
 	greet();
-  
+
 	while(!result)
 	{
 		clear();
@@ -38,19 +41,20 @@ int main(int argc, char* argv[])
 		col = getchar();
 		ARR[row][col]='O';
 
- 		show(n, &n);
-		result = check(N, ARR);
+ 		show(N, (char*)&N);
+		result = check(N, (char*)ARR);
+		/*
+			TODO: The Board will be shown after each move by either user
+		*/
 	}
-	
+
 	if(result == 1){
 		printf("Congrats Player1 ('X') wins\n");
-	}
-	else if(result == 2){
+	}	else if(result == 2){
 		printf("Congrats Player2 ('O') wins\n");
+	}	else{
+		printf("Match Tie !!!!!\n");
 	}
-	else{
-		printf(" Match Tie !!!!!\n");
-	}
-	
+
 	return 0;
 }

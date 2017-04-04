@@ -8,9 +8,6 @@
  */
 
 #include "helper.h"
-char player1='X',player2='O';
-int n;
-
 
 void greet(void)
 {
@@ -19,12 +16,13 @@ void greet(void)
 	sleep(5);
 }
 
-void init(int n, int* A)
+void init(int n, char* A)
 {
-	// TODO : Initialize the board.
+	for(int i = 0, l = n * n; i < l; i++)
+		A[i] = '\0';
 }
 
-void show(int n, int* A)
+void show(int n, char* A)
 {
 	for(int i = 0; i < n; i++){
 		for(int j = 0; (j < n && (!j || putchar('|'))) || putchar('\n'); j++)
@@ -40,114 +38,47 @@ void clear(void)
 	printf("\033[%d;%dH", 0, 0);
 }
 
-int check(int s , char (*C)[n])
+int check(int n, char* A)
 {
-
-	int row,column;
-	// checking for row wise//
-	for(row=0;row<s;row++)
-	{
-		char i=C[row][0];int flag=0;
-		for(column=0;column<s;column++)
-		{
-			if(i==C[row][column])
-				flag=1;
-			else {
-				flag=0;
+	int row, col, flag = 0;
+	// Row-wise checking
+	for(row = 0; row < n; row++){
+		for(col = 1; col < n || !(flag = 1); col++)
+			if(A[row * n + col] != A[row * n + col - 1])
 				break;
-			}
-		}
-		if(flag==1)
-		{
-			if(C[row][0]==player1)
-				return 1;
-			if(C[row][0]==player2)
-				return 2;
-
-
-		}
+		if(flag)
+			return A[row * n + col - 1] == 'X' ? 1 : 2;
 	}
-	// checking for column wise//
-	for(column=0;column<s;column++)
-	{
-		char i=C[0][column];int flag=0;
-		for(row=0;row<s;row++)
-		{
-			if(i==C[row][column])
-				flag=1;
-			else {
-				flag=0;
+	// Column-wise checking
+	for(col = 0; col < n; col++){
+		for(row = 1; row < n || !(flag = 1); row++)
+			if(A[row * n + col] != A[row * n + col - 1])
 				break;
-			}
-		}
-		if(flag==1)
-		{
-			if(C[0][column]==player1)
-				return 1;
-
-			if(C[0][column]==player2)
-				return 2;
-		}
+		if(flag)
+			return A[row * n + col - 1] == 'X' ? 1 : 2;
 	}
-	//checking for diagonals//
-	//major diagonal//
-	char i=C[0][0];int flag=0;
-	for(row=0,column=0;row<s,column<s;row++,column++)
-	{
-		if(i==C[row][column])
-			flag=1;
-		else {
-			flag=0;
+	// Upper diagonal checking
+	for(row = col = 0; row < n || !(flag = 1); row++, col++){
+		if(A[row * n + col] != A[(row - 1) * n + col - 1])
 			break;
-		}
+		if(flag)
+			return A[0] == 'X' ? 1 : 2;
 	}
-	if(flag==1)
-	{
-		if(C[0][0]==player1)
-			return 1;
-
-		if(C[0][0]==player2)
-			return 2;
-
-	}
-	//Checking for minor diagonal//
-	char j=C[0][s-1];int flag_1=0;
-	for(row=0,column=s-1;row<s,column>=0;row++,column--)
-	{
-		if(j==C[row][column])
-			flag_1=1;
-		else {
-			flag_1=0;
+	// Lower diagonal checking
+	for(row = col = n; row > 0 || !(flag = 1); --row, --col){
+		if(A[row * n + col] != A[(row - 1) * n + col - 1])
 			break;
-		}
+		if(flag)
+			return A[n - 1] == 'X' ? 1 : 2;
 	}
-	if(flag_1==1)
-	{
-		if(C[0][s-1]==player1)
-			return 1;
-
-		if(C[0][s-1]==player2)
-			return 2;
-
-	}
-
-	//condition of draw and incomplete game//
-	int flag_2=0;
-	for(row=0;row<s;row++)
-	{
-		for(column=0;column<s;column++)
-		{
-			if(C[row][column]==player1||C[row][column]==player2)
-				flag_2=1;
-			else 
-			{
-				flag_2=0;
+	// Checking for empty position
+	for(row = 0; row < n; row++){
+		for(col = 0; col < n || !(flag = 1); col++)
+			if(A[row * n + col] == '\0')
 				break;
-			}
-		}
+		if(flag)
+			return -1;
 	}
-	if(flag_2==1)
-		return 3;
-	else
-		return 0;
+	// Match is on
+	return 0;
 }

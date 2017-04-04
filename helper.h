@@ -31,7 +31,7 @@
 /*
  * Initialization of the Board
 */
-void init(int n, int*);
+void init(int, char*);
 
 /*
  * Prints a Welcome Message
@@ -41,7 +41,7 @@ void greet(void);
 /*
  * Loads the Modified Board
 */
-void show(int, int*);
+void show(int, char*);
 
 /*
  * Clear the console before printing the Board
@@ -55,6 +55,6 @@ void clear(void);
  * Returns -1 if draw
  * Returns 0 otherwise
 */
-int check(int, int*);
+int check(int, char*);
 
 #endif
