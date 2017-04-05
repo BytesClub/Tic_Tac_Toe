@@ -12,7 +12,7 @@
 int main(int argc, char* argv[])
 {
 	if (argc != 2) {
-		printf("Usage: %s n\n", argv[0]);
+		printf("Usage: %s n\nn: Dimension of the Board\n", argv[0]);
 		return 1;
 	}
 	
@@ -49,11 +49,11 @@ int main(int argc, char* argv[])
 		*/
 	}
 
-	if(result == 1){
+	if(result == 1) {
 		printf("Congrats Player1 ('X') wins\n");
-	} else if(result == 2){
+	} else if(result == 2) {
 		printf("Congrats Player2 ('O') wins\n");
-	} else{
+	} else {
 		printf("Match Tie !!!!!\n");
 	}
 
