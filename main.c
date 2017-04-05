@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 		printf("Usage: %s n\n", argv[0]);
 		return 1;
 	}
-	if(argv[1]<0){
+	if(*argv[1]<0){
 		printf("Negative arguments are not allowed!");
 		return 1;
 	}
