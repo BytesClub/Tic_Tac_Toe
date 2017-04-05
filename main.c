@@ -20,6 +20,10 @@ int main(int argc, char* argv[])
 	/*
 		TODO: Validate N (DIM_MIN <= N <= DIM_MAX)
 	*/
+	if(N < DIM_MIN || N > DIM_MAX) {
+		printf("ERROR\n");
+		return 1;
+	}
 	int result = 0, row, col;
 	char ARR[N][N];
 
