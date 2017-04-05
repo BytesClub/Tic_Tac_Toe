@@ -11,28 +11,24 @@
 
 int main(int argc, char* argv[])
 {
-	if(argc != 2){
+	if (argc != 2) {
 		printf("Usage: %s n\n", argv[0]);
 		return 1;
 	}
-
+	
 	int N = atoi(argv[1]);
-	/*
-		TODO: Validate N (DIM_MIN <= N <= DIM_MAX)
-	*/
-	if(N < DIM_MIN || N > DIM_MAX) {
-		printf("ERROR\n");
+	if (N < DIM_MIN || N > DIM_MAX) {
+		printf("Fatal Error: Board dimension - Out of range\nRange: [%d, %d]\n", DIM_MIN, DIM_MAX);
 		return 1;
 	}
+	
 	int result = 0, row, col;
 	char ARR[N][N];
-
+	
 	init(N, (char*)ARR);
 	greet();
-
-	while(!result)
-	{
-		clear();
+	
+	while (!result)	{
 		printf("\nPlayer 1: Enter Postion:\nRow Number: ");
 		row = getchar();
 		printf("\nColumn Number: ");
@@ -45,6 +41,7 @@ int main(int argc, char* argv[])
 		col = getchar();
 		ARR[row][col]='O';
 
+		clear();
  		show(N, (char*)&N);
 		result = check(N, (char*)ARR);
 		/*
