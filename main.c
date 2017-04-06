@@ -25,12 +25,12 @@ int main(int argc, char* argv[])
 	int result = 0, row, col;
 	char Board[N * N];
 	
-	init(N, ARR);
+	init(N, Board);
 	greet();
 	
 	while (!result)	{
 		clear();
- 		show(N, (char*)&N);
+ 		show(N, Board);
 		
 		printf("\nPlayer 1: Enter Postion:\nRow Number: ");
 		row = getchar();
@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 		col = getchar();
 		Board[row * N + col]='O';
 
-		result = check(N, ARR);
+		result = check(N, Board);
 		/*
 			TODO: The Board will be shown after each move by either user
 		*/
