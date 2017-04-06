@@ -5,7 +5,7 @@
  * Copyright (C) BytesClub 2017, MIT 
  *
  * helper.c
-*/
+ */
 
 #define _XOPEN_SOURCE 500
 
@@ -24,28 +24,28 @@
 
 /*
  * Minimum and Maximum Dimension
-*/
+ */
 #define DIM_MIN 3
 #define DIM_MAX 9
 
 /*
  * Initialization of the Board
-*/
+ */
 void init(int, char*);
 
 /*
  * Prints a Welcome Message
-*/
+ */
 void greet(void);
 
 /*
  * Loads the Modified Board
-*/
+ */
 void show(int, char*);
 
 /*
  * Clear the console before printing the Board
-*/
+ */
 void clear(void);
 
 /*
@@ -54,7 +54,7 @@ void clear(void);
  * Returns 2 if O wins
  * Returns -1 if draw
  * Returns 0 otherwise
-*/
+ */
 int check(int, char*);
 
 #endif

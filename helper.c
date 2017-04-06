@@ -12,7 +12,7 @@
 void greet(void)
 {
 	clear();
-	printf("WELCOME TO GAME OF TIC_TAC_TOE\n");
+	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n");
 	sleep(5);
 }
 
