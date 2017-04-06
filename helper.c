@@ -14,6 +14,7 @@ void greet(void)
 	clear();
 	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n");
 	sleep(5);
+	clear();
 }
 
 void init(int n, char* A)
