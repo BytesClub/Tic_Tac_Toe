@@ -1,5 +1,5 @@
 # Ignore all files/directories
-*
+#*
 # Allow directories
 !*/*
 # Allow File with Extension
