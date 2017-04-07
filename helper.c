@@ -12,7 +12,7 @@
 void greet(void)
 {
 	clear();
-	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n");
+	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n\n");
 	sleep(5);
 	clear();
 }
@@ -25,10 +25,10 @@ void init(int n, char* A)
 
 void show(int n, char* A)
 {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; (j < n && (!j || putchar('|'))) || putchar('\n'); j++)
+	for (int i = !putchar('\n'); i < n; i++) {
+		for (int j = 0; (j < n && (!j || putchar('|'))) || !putchar('\n'); j++)
 			printf(" %c ", A[i * n + j]);
-		for (int j = 0; j < n || !putchar('\n'); j++)
+		for (int j = 0; !(i + 1 == n) && (j < n || !putchar('\n')); j++)
 			printf("----");
 	}
 }
