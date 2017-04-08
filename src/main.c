@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	init(N, Board);
 	greet();
 	
-	while (clear(), show(N, Board), !result) {
+	while (show(N, Board), !result) {
 		do {
 			printf("\nPlayer %d: Enter Postion: ", player + 1);
 			scanf("%d", &pos), pos--;

@@ -44,11 +44,6 @@ void greet(void);
 void show(int, char*);
 
 /*
- * Clear the console before printing the Board
- */
-void clear(void);
-
-/*
  * Checks if a user wins
  * Returns 1 if X wins
  * Returns 2 if O wins
