@@ -22,42 +22,30 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	
-	int result = 0, pos;
+	int result = 0, pos, player = 0;
+	const char Tic[] = {'X', 'O'};
 	char Board[N * N];
 	
 	init(N, Board);
 	greet();
 	
-	while (!result)	{
-		clear();
- 		show(N, Board);
-		
-		printf("\nPlayer 1: Enter Postion: ");
-		pos = (getchar() - '1');
-		fflush(stdin);
-		if (pos < 0 || pos >= N * N)
-			continue;
-		Board[pos] = 'X';
-
-		printf("\nPlayer 2: Enter Postion: ");
-		pos = (getchar() - '1');
-		fflush(stdin);
-		if (pos < 0 || pos >= N * N)
-			continue;
-		Board[pos] = 'O';
-
+	while (clear(), show(N, Board), !result)	{
+		do {
+			printf("\nPlayer %d: Enter Postion: ", player + 1);
+			pos = (getchar() - '1');
+			fflush(stdin);
+		}while ((pos < 0 || pos >= N * N || Board[pos] != '\0') 
+			&& printf("Error: Invalid position.\n"));
+		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
-		/*
-			TODO: The Board will be shown after each move by either user
-		*/
 	}
 
 	if(result == 1) {
-		printf("Congrats Player1 ('X') wins\n");
+		printf("\nCongrats Player1 ('X') wins\n");
 	} else if(result == 2) {
-		printf("Congrats Player2 ('O') wins\n");
+		printf("\nCongrats Player2 ('O') wins\n");
 	} else {
-		printf("Match Tie !!!!!\n");
+		printf("\nMatch Tie !!!!!\n");
 	}
 
 	return 0;
