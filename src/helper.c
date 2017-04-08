@@ -49,7 +49,7 @@ int check(int n, char* A)
 			return A[row * n + col - 1] == 'X' ? 1 : 2;
 	}
 	// Column-wise checking
-	for (col = 0; col < n; col++){
+	for (col = 0; col < n; col++) {
 		for (row = 1; row < n || !(flag = 1); row++)
 			if (!A[row * n + col] || A[row * n + col] != A[(row - 1) * n + col])
 				break;
@@ -57,27 +57,27 @@ int check(int n, char* A)
 			return A[(row - 1) * n + col] == 'X' ? 1 : 2;
 	}
 	// Upper diagonal checking
-	for (row = col = 1; row < n || !(flag = 1); row++, col++){
+	for (row = col = 1; row < n || !(flag = 1); row++, col++) {
 		if (!A[row * n + col] || A[row * n + col] != A[(row - 1) * n + col - 1])
 			break;
-		if (flag)
-			return A[0] == 'X' ? 1 : 2;
 	}
+	if (flag)
+		return A[0] == 'X' ? 1 : 2;
 	// Lower diagonal checking
-	for (row = 1, col = n - 1; col > 0 || !(flag = 1); row++, col--){
+	for (row = 1, col = n - 1; col > 0 || !(flag = 1); row++, col--) {
 		if (!A[row * n + col - 1] || A[row * n + col - 1] != A[(row - 1) * n + col])
 			break;
-		if (flag)
-			return A[n - 1] == 'X' ? 1 : 2;
 	}
+	if (flag)
+		return A[n - 1] == 'X' ? 1 : 2;
 	// Checking for empty position
-	for (row = 0; row < n || !(flag = 1); row++){
-		for (col = 0; col < n; col++)
-			if (A[row * n + col] == '\0')
-				break;
-		if (flag)
-			return -1;
+	for (row = col = 0; col < n || (col = 0, ++row) < n || !(flag = 1); col++) {
+		if (A[row * n + col] == '\0')
+			break;
 	}
+	// Match Tied
+	if (flag)
+		return -1;
 	// Match is on
 	return 0;
 }
