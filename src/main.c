@@ -29,13 +29,11 @@ int main(int argc, char* argv[])
 	init(N, Board);
 	greet();
 	
-	while (clear(), show(N, Board), !result)	{
+	while (clear(), show(N, Board), !result) {
 		do {
 			printf("\nPlayer %d: Enter Postion: ", player + 1);
-			scanf("%d",&pos);
-			pos--;
-		}while ((pos < 0 || pos >= N * N || Board[pos] != '\0') 
-			&& printf("Error: Invalid position.\n"));
+			scanf("%d", &pos), pos--;
+		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') && printf("Error: Invalid position.\n"));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
 	}
