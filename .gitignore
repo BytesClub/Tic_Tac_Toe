@@ -2,6 +2,8 @@
 #*
 # Allow directories
 !*/*
+# Ignore bin directory
+bin/
 # Allow File with Extension
 !*.*
 # Ignore Binary Files
