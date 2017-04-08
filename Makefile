@@ -31,6 +31,7 @@ $(BIN)/$(EXE): $(OBJECT)
 	$(CC) $^ -o $@
 
 $(BIN)/%.o: $(SRC)/%.c
+	@mkdir -p $(BIN)
 	$(CC) $(CFLAGS) $(DIR) -c $< -o $@
 
 # Help Option
