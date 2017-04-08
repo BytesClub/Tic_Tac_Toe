@@ -33,15 +33,12 @@ int main(int argc, char* argv[])
  		show(N, Board);
 		
 		printf("\nPlayer 1: Enter Postion: ");
-		row = getchar();
-		row = row-'1';
-		Board[(row/3) * N + row%3]='X';
-		show(N,Board);
+		row = (getchar())-'1';
+		Board[row]='X';
 
 		printf("\nPlayer 2: Enter Postion: ");
-		row = getchar();
-		row = row-'1';
-		Board[(row/3) * N + row%3]='O';
+		row = (getchar())-'1';
+		Board[row]='O';
 
 		result = check(N, Board);
 		/*
