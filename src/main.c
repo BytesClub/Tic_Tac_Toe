@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	
-	int result = 0, row;
+	int result = 0, pos;
 	char Board[N * N];
 	
 	init(N, Board);
@@ -33,12 +33,18 @@ int main(int argc, char* argv[])
  		show(N, Board);
 		
 		printf("\nPlayer 1: Enter Postion: ");
-		row = (getchar())-'1';
-		Board[row]='X';
+		pos = (getchar() - '1');
+		fflush(stdin);
+		if (pos < 0 || pos >= N * N)
+			continue;
+		Board[pos] = 'X';
 
 		printf("\nPlayer 2: Enter Postion: ");
-		row = (getchar())-'1';
-		Board[row]='O';
+		pos = (getchar() - '1');
+		fflush(stdin);
+		if (pos < 0 || pos >= N * N)
+			continue;
+		Board[pos] = 'O';
 
 		result = check(N, Board);
 		/*
