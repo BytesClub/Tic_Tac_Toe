@@ -9,30 +9,35 @@
 CC = gcc
 
 # Flags for Compiler
-CFLAGS = -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow
+CFLAGS = -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow 
+
+# Flags for Directories
+DIR = -I$(INC)
 
 # Executable
 EXE = play
 
-# Header File(s)
-HDRS = helper.h
+# Directories
+SRC = src
+INC = inc
+BIN = bin
 
-# Library File(s)
-LIBS = helper.c
-
-# Source File(s)
-SRCS = main.c
-
-# Object File(s)
-OBJS = $(SRCS:.c=.o)
+# Source and Object File(s)
+SOURCE = $(wildcard $(SRC)/*.c)
+OBJECT = $(patsubst %,$(BIN)/%, $(notdir $(SOURCE:.c=.o)))
 
 # Default Target
-main: $(OBJS) $(HDRS) $(LIBS) Makefile
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJS) $(HDRS) $(LIBS)
+$(BIN)/$(EXE): $(OBJECT)
+	$(CC) $^ -o $@
 
-# Dependencies 
-$(OBJS): $(HDRS) Makefile
+$(BIN)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) $(DIR) -c $< -o $@
+
+# Help Option
+help:
+	@echo "src: $(SOURCE)"
+	@echo "obj: $(OBJECT)"
 
 # House-keeping
 clean:
-	rm -f core $(EXE) *.o *.exe
+	rm -rf core $(EXE) bin/* *.o *.exe
