@@ -21,13 +21,14 @@
 #if defined(_WIN32) || defined(__WIN32__)
 #ifndef __windows_h
 #include <windows.h>
-#define sleep Sleep
-#define CLEAR "cls"
+#define SLEEP Sleep(5000)
+#define CLEAR system("cls")
 #endif
 #else
 #ifndef __unistd_h
 #include <unistd.h>
-#define CLEAR "clear"
+#define SLEEP sleep(5)
+#define CLEAR system("clear")
 #endif
 #endif
 
