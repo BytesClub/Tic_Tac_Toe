@@ -11,7 +11,7 @@
 
 void greet(void)
 {
-	system("clear");
+	system(CLEAR);
 	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n\n");
 	sleep(5);
 }
@@ -23,7 +23,7 @@ void init(int n, char* A)
 
 void show(int n, char* A)
 {
-	system("clear");
+	system(CLEAR);
 	for (int i = !putchar('\n'); i < n; i++) {
 		for (int j = 0; (j < n && (!j || putchar('|'))) || !putchar('\n'); j++)
 			A[i * n + j] ? printf("  %c ", A[i * n + j]) : printf(" %2d ", (i * n + j + 1));

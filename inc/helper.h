@@ -18,8 +18,17 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
+#if defined(_WIN32) || defined(__WIN32__)
+#ifndef __windows_h
+#include <windows.h>
+#define sleep Sleep
+#define CLEAR "cls"
+#endif
+#else
 #ifndef __unistd_h
 #include <unistd.h>
+#define CLEAR "clear"
+#endif
 #endif
 
 /*
