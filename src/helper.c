@@ -16,9 +16,12 @@ void greet(void)
 	/*
 		TODO: Print Contributors List Here
 	*/
-	printf("\nLoading. Please Wait...");
+	printf("\nLoading. Please Wait..."), fflush(stdout);
 	SLEEP;
-	printf("\rLoading Completed. Press ENTER to continue... ");
+	printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
+	/*
+		TODO: Restrict User from Inserting Invalid Character
+	*/
 	fflush(stdin), getchar(), fflush(stdin);
 }
 
