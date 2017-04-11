@@ -1,11 +1,15 @@
 # Tic_Tac_Toe
 A simple Tic_Tac_Toe implementation in C
-Copyright (C) BytesClub 2017, MIT
+
+Copyright (C) BytesClub 2017
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Table of Content
 1. [Objectives](#objectives)
 2. [Recommended Reading](#recommended-reading)
 3. [Academic Honesty](#academic-honesty)
+4. [Prerequisite](#prerequisite)
 4. [Getting Started](#getting-started)
 5. [The Gameplay](#the-gameplay)
 6. [Helper.H](#helperh)
@@ -20,9 +24,10 @@ Copyright (C) BytesClub 2017, MIT
 * Making a simple board game in the end of the day
 
 ### Recommended Reading
-* Bytes Club Blog post on Git and SSH
-* Programming in ANSI C - *E. Balaguruswamy*
-* The C Programming Language - *B.W. Kerningham & D.M. Ritchie*
+* Bytes Club Blog post on [Git](https://bytesclub.github.io/2017/02/23/introduction-to-git/) and [SSH](https://bytesclub.github.io/2017/03/01/introduction-to-ssh/)
+* Bytes Club [Coding Style](https://bytesclub.github.io/docs/coding_style.pdf)
+* Programming in ANSI C - _E. Balaguruswamy_
+* The C Programming Language - _B.W. Kerningham & D.M. Ritchie_
 
 ### Academic Honesty
 #### Reasonable
@@ -69,6 +74,17 @@ Copyright (C) BytesClub 2017, MIT
 
 * Viewing another’s solution to a problem set’s problem and basing your own solution on it.
 
+### Prerequisite
+* **OS:** Linux
+	* GCC
+	* Git CMD
+	* Any text editor
+* **OS:** Windows
+	* MinGW
+	* Git Bash
+	* Any text editor
+* A GitHub account
+
 ### Getting Started
 * Fork the repository to your profile.
 * Open your terminal window and run the following
@@ -77,9 +93,9 @@ $ git clone git@github.com:<your_profile>/Tic_Tac_Toe.git
 $ cd Tic_Tac_Toe/
 ```
 * Make sure your local repository contains every file including this README
-* Now execute the following at the terminal
+* Now execute the following _(or MinGW equivalent)_ at the terminal
 ```
-$ make main
+$ make 
 ```
    *If it gives any error, immidiately notify by registering an issue*
 * Now your repository will have a binary executable file named as `play`
@@ -123,6 +139,7 @@ $ git fetch upstream
 $ git checkout master
 $ git rebase upstream/master
 ```
+* Create a new branch in your local as well as remote repository
 * Complete the implementation of the functions mentioned as **TODO**
 * Complete the main function.
 * Compile and execute to be sure that it's working.
@@ -133,10 +150,11 @@ $ git commit
 shortlog: commit title
 commit description
 fixes: #issue_number
-signed-off by: user_name<email>
-$ git push origin master
+signed-off by: your_name<email>
+$ git push origin <branch-name>
 ```
 * **Your commit should not contain the binary executable file**
+* **Your commit should not make effect in master branch**
 * Create a `Pull Request` to the Club repository.
 * Wait for a response from Club Heads.
 
