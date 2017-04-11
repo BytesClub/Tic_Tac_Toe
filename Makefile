@@ -28,7 +28,7 @@ OBJECT = $(patsubst %,$(BIN)/%, $(notdir $(SOURCE:.c=.o)))
 
 # Default Target
 $(BIN)/$(EXE): $(OBJECT)
-	$(CC) $^ -o $@
+	$(CC) $^ -o $@ -pg
 
 $(BIN)/%.o: $(SRC)/%.c
 	@mkdir -p $(BIN)

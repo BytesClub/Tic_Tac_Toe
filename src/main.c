@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	while (show(N, Board), !result) {
 		do {
 			printf("\nPlayer %d: Enter Postion: ", player + 1);
-			scanf("%d", &pos), pos--;
+			scanf("%d", &pos), fflush(stdin), pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') && printf("Error: Invalid position.\n"));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);

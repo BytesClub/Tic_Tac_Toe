@@ -10,11 +10,11 @@ Copyright (C) BytesClub 2017
 2. [Recommended Reading](#recommended-reading)
 3. [Academic Honesty](#academic-honesty)
 4. [Prerequisite](#prerequisite)
-4. [Getting Started](#getting-started)
-5. [The Gameplay](#the-gameplay)
-6. [Helper.H](#helperh)
-7. [Your task](#your-task)
-8. [How to Submit](#how-to-submit)
+5. [Getting Started](#getting-started)
+6. [The Gameplay](#the-gameplay)
+7. [Helper.H](#helperh)
+8. [Your task](#your-task)
+9. [How to Submit](#how-to-submit)
 
 ### Objectives
 * Getting comfortable with Linux Environment
@@ -84,6 +84,7 @@ Copyright (C) BytesClub 2017
 	* Git Bash
 	* Any text editor
 * A GitHub account
+* Download [ghb](https://github.com/BytesClub/ghb) and get notified about GitHub Issues/PR on your bash terminal
 
 ### Getting Started
 * Fork the repository to your profile.
@@ -101,7 +102,6 @@ $ make
 * Now your repository will have a binary executable file named as `play`
 * Open `helper.h` in your text editor and understand which functions are already given.
 * Open `helper.c` to view the implementation of those function done previously
-* _Download [ghi](https://github.com/stephencelis/ghi) and get notified about GitHub Issues on your terminal (Optional)_
 
 ### The Gameplay
 Open `main.c` in your text editor and you will see the following

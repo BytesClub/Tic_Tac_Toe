@@ -28,7 +28,7 @@
 #ifndef __unistd_h
 #include <unistd.h>
 #define SLEEP sleep(5)
-#define CLEAR system("clear")
+#define CLEAR system("clear")	//tput reset
 #endif
 #endif
 
