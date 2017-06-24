@@ -4,6 +4,11 @@ A simple Tic_Tac_Toe implementation in C
 Copyright (C) BytesClub 2017
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Issues](https://img.shields.io/github/issues/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/issues)
+[![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/pulls)
+[![Releases](https://img.shields.io/github/release/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/releases)
+[![Mailing List](https://img.shields.io/badge/Mailing%20List-BytesClub-blue.svg)](mailto:bytes-club@googlegroups.com)
+[![gitter](https://badges.gitter.im/gitterHQ/gitterHQ.github.io.svg)](https://gitter.im/Bytes_Club/General)
 
 ### Table of Content
 1. [Objectives](#objectives)
@@ -157,5 +162,9 @@ $ git push origin <branch-name>
 * **Your commit should not make effect in master branch**
 * Create a `Pull Request` to the Club repository.
 * Wait for a response from Club Heads.
+
+### Reference
+[Contribution Guidelines](/CONTRIBUTING.md)
+[Code of Conduct](/CODE_OF_CONDUCT.md)
 
 #### Happy Coding :)
