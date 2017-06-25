@@ -32,7 +32,8 @@ int main(int argc, char* argv[])
 
 	while (show(N, Board), !result) {
 		do {
-			printf("\nPlayer \'%c\': Enter Postion: ", Tic[player]);
+			printf("\nFor Player \'%c\':\n", Tic[player]);
+			printf("Enter Position :"); 
 			assert(scanf("%d", &pos) == 1);
 			fflush(stdin), pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
