@@ -12,13 +12,13 @@
 int main(int argc, char* argv[])
 {
 	if (argc != 2) {
-		printf("Usage: %s n\nn: Dimension of the Board\n", argv[0]);
+		printf("\x1b[32mUsage: %s n\n\x1b[0mn: Dimension of the Board\n", argv[0]);
 		return 1;
 	}
 
 	int N = atoi(argv[1]);
 	if (N < DIM_MIN || N > DIM_MAX) {
-		printf("Fatal Error: Board dimension - Out of range\nRange: [%d, %d]\n",
+		printf("\x1b[31mFatal Error: Board dimension - Out of range\n\x1b[0mRange: [%d, %d]\n",
 		        DIM_MIN, DIM_MAX);
 		return 1;
 	}
@@ -32,8 +32,8 @@ int main(int argc, char* argv[])
 
 	while (show(N, Board), !result) {
 		do {
-			printf("\nFor Player \'%c\':\n", Tic[player]);
-			printf("Enter Position :"); 
+			printf("\nFor Player(\'%c\'):\n", Tic[player]);
+			printf("Enter Position: "); 
 			assert(scanf("%d", &pos) == 1);
 			fflush(stdin), pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
@@ -42,10 +42,8 @@ int main(int argc, char* argv[])
 		result = check(N, Board);
 	}
 
-	if(result == 1) {
-		printf("\nCongrats Player1 ('X') wins\n");
-	} else if(result == 2) {
-		printf("\nCongrats Player2 ('O') wins\n");
+	if(result == 1 || result == 2) {
+		printf("\nCongrats Player(\'%c\') wins\n", Tic[result - 1]);
 	} else {
 		printf("\nMatch Tie !!!!!\n");
 	}

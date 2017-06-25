@@ -4,9 +4,9 @@ A simple Tic_Tac_Toe implementation in C
 Copyright (C) BytesClub 2017
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Issues](https://img.shields.io/github/issues/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/issues)
-[![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/pulls)
-[![Releases](https://img.shields.io/github/release/BytesClub/ghb.svg)](https://github.com/BytesClub/Tic_Tac_Toe/releases)
+[![Issues](https://img.shields.io/github/issues/BytesClub/Tic_Tac_Toe.svg)](https://github.com/BytesClub/Tic_Tac_Toe/issues)
+[![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/Tic_Tac_Toe.svg)](https://github.com/BytesClub/Tic_Tac_Toe/pulls)
+[![Releases](https://img.shields.io/github/release/BytesClub/Tic_Tac_Toe.svg)](https://github.com/BytesClub/Tic_Tac_Toe/releases)
 [![Mailing List](https://img.shields.io/badge/Mailing%20List-BytesClub-blue.svg)](mailto:bytes-club@googlegroups.com)
 [![gitter](https://badges.gitter.im/gitterHQ/gitterHQ.github.io.svg)](https://gitter.im/Bytes_Club/General)
 
@@ -122,11 +122,11 @@ It will produce following result
 ```
 WELCOME TO GAME OF TIC_TAC_TOE
 
-    |    |    
+  1 |  2 |  3
 --------------
-    |    |
+  4 |  5 |  6
 --------------
-    |    |
+  7 |  8 |  9
 ```
 The program will ask the user for the position to put **`X`** or **`O`** and will act accordingly. In the end it will announce the winner, if any, or if it's a tie.
 

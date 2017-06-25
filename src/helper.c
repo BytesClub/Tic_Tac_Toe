@@ -19,6 +19,9 @@ void greet(void)
 	printf("Satyam Kumar :- <satyamvats5@gmail.com>\n");
 	printf("Amitava Mitra :- <mitraamitava7@gmail.com> \n"); 
 	printf("\nLoading. Please Wait..."), fflush(stdout);
+	/*
+		TODO: Stop echo on terminal
+	*/
 	SLEEP;
 	printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
 	/*
