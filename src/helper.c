@@ -13,9 +13,11 @@ void greet(void)
 {
 	CLEAR;
 	printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n\n");
-	/*
-		TODO: Print Contributors List Here
-	*/
+	printf("Contributers:-\n\n");
+	printf("Progyan Bhattacharya :- <bprogyan@gmail.com>\n");
+	printf("Rudra Nil Basu :- <rudra.nil.basu.1996@gmail.com>\n");
+	printf("Satyam Kumar :- <satyamvats5@gmail.com>\n");
+	printf("Amitava Mitra :- <mitraamitava7@gmail.com> \n"); 
 	printf("\nLoading. Please Wait..."), fflush(stdout);
 	SLEEP;
 	printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
