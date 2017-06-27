@@ -21,14 +21,8 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
-#ifndef __stdlib_h
-#include <stdlib.h>
-#endif
 #ifndef __termios_h
 #include <termios.h>
-#endif
-#ifndef __unistd_h
-#include <unistd.h>
 #endif
 #ifndef __color_h
 #include <color.h>
@@ -77,8 +71,14 @@ void show(int, char*);
  */
 int check(int, char*);
 
+/*
+ * Disable ECHO while working
+ */
 void disableRawMode();
 
+/*
+ * Enable ECHO once done
+ */
 void enableRawMode();
 
 #endif
