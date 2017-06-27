@@ -21,6 +21,9 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
+#ifndef __termios_h
+#include <termios.h>
+#endif
 #ifndef __color_h
 #include <color.h>
 #endif
@@ -67,5 +70,15 @@ void show(int, char*);
  * Returns 0 otherwise
  */
 int check(int, char*);
+
+/*
+ * Disable ECHO while working
+ */
+void disableRawMode();
+
+/*
+ * Enable ECHO once done
+ */
+void enableRawMode();
 
 #endif

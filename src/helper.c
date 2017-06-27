@@ -9,6 +9,22 @@
 
 #include <helper.h>
 
+struct termios orig_termios;
+
+void disableRawMode()
+{
+	tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
+}
+
+void enableRawMode()
+{	
+	tcgetattr(STDIN_FILENO, &orig_termios);
+	atexit(disableRawMode);
+	struct termios raw = orig_termios;
+	raw.c_lflag &= ~(ECHO);
+	tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+}
+
 void greet(void)
 {
 	CLEAR;
@@ -19,15 +35,11 @@ void greet(void)
 	printf("Satyam Kumar :- <satyamvats5@gmail.com>\n");
 	printf("Amitava Mitra :- <mitraamitava7@gmail.com> \n"); 
 	printf("\nLoading. Please Wait..."), fflush(stdout);
-	/*
-		TODO: Stop echo on terminal
-	*/
+	enableRawMode();
 	SLEEP;
 	printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
-	/*
-		TODO: Restrict User from Inserting Invalid Character
-	*/
-	fflush(stdin), getchar(), fflush(stdin);
+	scanf("%*[^\n]%*1[\n]");
+	disableRawMode();
 }
 
 void init(int n, char* A)
