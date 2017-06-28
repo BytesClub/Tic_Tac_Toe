@@ -13,7 +13,7 @@ struct termios orig_termios;
 
 void disableRawMode()
 {
-	tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
+	tcsetattr(STDIN_FILENO,TCSAFLUSH,&orig_termios);
 }
 
 void enableRawMode()
@@ -51,10 +51,10 @@ void show(int n, char* A)
 {
 	CLEAR;
 	for (int i = !putchar('\n'); i < n; i++) {
-		for (int j = 0; (j < n && (!j || putchar('|'))) || !putchar('\n'); j++)
-			A[i * n + j] ? printf("  %c ", A[i * n + j]) : printf(" %2d ", (i * n + j + 1));
+		for (int j = 0; (j < n && (!j || printf("\033[22;34m|\033[0m"))) || !putchar('\n'); j++)
+			A[i * n + j] ? ( (A[i*n +j]=='X')?printf("  \033[22;31m%c\033[0m ", A[i * n + j]): printf("  \033[22;33m%c\033[0m ", A[i * n + j])) : printf(" %2d ", (i * n + j + 1));
 		for (int j = 0; !(i + 1 == n) && (j < n || !putchar('\n')); j++)
-			printf("-----");
+			printf("\033[22;34m-----\033[0m");
 	}
 }
 

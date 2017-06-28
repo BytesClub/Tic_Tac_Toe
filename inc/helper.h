@@ -21,6 +21,9 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
+#ifndef __ctype_h
+#include <ctype.h>
+#endif
 #ifndef __termios_h
 #include <termios.h>
 #endif
