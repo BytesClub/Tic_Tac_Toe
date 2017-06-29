@@ -39,15 +39,15 @@ int main(int argc, char* argv[])
 			assert(scanf("%d", &pos) == 1);
 			fflush(stdin), pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
-		         printf("Error: Invalid position.\n"));
+		          printf(ANSI_CYAN "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
 	}
 
 	if(result == 1 || result == 2) {
-		printf("\nCongrats Player(\'%c\') wins\n", Tic[result - 1]);
+		printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
 	} else {
-		printf("\nMatch Tie !!!!!\n");
+		printf( ANSI_CYAN"\nMatch Tie !!!!!\n" ANSI_RESET);
 	}
 
 	return 0;
