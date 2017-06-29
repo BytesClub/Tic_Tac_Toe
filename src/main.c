@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 
 	int N = atoi(argv[1]);
 	if (N < DIM_MIN || N > DIM_MAX) {
-		printf("Fatal Error: Board dimension - Out of range\nRange: [%d, %d]\n",
+		printf(ANSI_RED "Fatal Error: Board dimension - Out of range\n" ANSI_RESET "Range: [%d, %d]\n",
 		        DIM_MIN, DIM_MAX);
 		return 1;
 	}
@@ -37,17 +37,17 @@ int main(int argc, char* argv[])
 			printf("\nFor Player(\'%c\'):\n", Tic[player]);
 			printf("Enter Position: "); 
 			assert(scanf("%d", &pos) == 1);
-			fflush(stdin), pos--;
+			pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
-		         printf("Error: Invalid position.\n"));
+		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
 	}
 
 	if(result == 1 || result == 2) {
-		printf("\nCongrats Player(\'%c\') wins\n", Tic[result - 1]);
+		printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
 	} else {
-		printf("\nMatch Tie !!!!!\n");
+		printf(ANSI_CYAN"\nMatch Tie !!!!!\n" ANSI_RESET);
 	}
 
 	return 0;

@@ -53,10 +53,12 @@ void show(int n, char* A)
 {
 	CLEAR;
 	for (int i = !putchar('\n'); i < n; i++) {
-		for (int j = 0; (j < n && (!j || putchar('|'))) || !putchar('\n'); j++)
-			A[i * n + j] ? printf("  %c ", A[i * n + j]) : printf(" %2d ", (i * n + j + 1));
+		for (int j = 0; (j < n && (!j || printf(ANSI_BLUE "|" ANSI_RESET))) || !putchar('\n'); j++)
+			A[i * n + j] ? ( (A[i*n +j]=='X')?printf(ANSI_RED "  %c " ANSI_RESET, A[i * n + j]): printf(ANSI_YELLOW "  %c " ANSI_RESET, A[i * n + j])) : printf(" %2d ", (i * n + j + 1));
+		printf(ANSI_BLUE);
 		for (int j = 0; !(i + 1 == n) && (j < n || !putchar('\n')); j++)
 			printf("-----");
+		printf(ANSI_RESET);
 	}
 }
 
