@@ -7,18 +7,20 @@
  * main.c
  */
 
+#ifndef __helper_h
 #include <helper.h>
+#endif
 
 int main(int argc, char* argv[])
 {
 	if (argc != 2) {
-		printf("\x1b[32mUsage: %s n\n\x1b[0mn: Dimension of the Board\n", argv[0]);
+		printf(ANSI_BLUE "Usage: %s n\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
 		return 1;
 	}
 
 	int N = atoi(argv[1]);
 	if (N < DIM_MIN || N > DIM_MAX) {
-		printf("\x1b[31mFatal Error: Board dimension - Out of range\n\x1b[0mRange: [%d, %d]\n",
+		printf("Fatal Error: Board dimension - Out of range\nRange: [%d, %d]\n",
 		        DIM_MIN, DIM_MAX);
 		return 1;
 	}

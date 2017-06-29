@@ -7,7 +7,9 @@
  * helper.c
  */
 
+#ifndef __helper_h
 #include <helper.h>
+#endif
 
 struct termios orig_termios;
 
