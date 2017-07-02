@@ -89,7 +89,9 @@ Copyright (C) BytesClub 2017
 	* Git Bash
 	* Any text editor
 * A GitHub account
-* Download [ghb](https://github.com/BytesClub/ghb) and get notified about GitHub Issues/PR on your bash terminal
+* Download [GitHub on Terminal](https://github.com/BytesClub/ghb) and get notified about GitHub Issues/PR on your bash terminal
+
+_**Note:** For Turbo C++ 4.5 or above use the IDE and DSW file for resolving  compatibility issue._
 
 ### Getting Started
 * Fork the repository to your profile.
@@ -101,10 +103,10 @@ $ cd Tic_Tac_Toe/
 * Make sure your local repository contains every file including this README
 * Now execute the following _(or MinGW equivalent)_ at the terminal
 ```
-$ make 
+$ make
 ```
    *If it gives any error, immidiately notify by registering an issue*
-* Now your repository will have a binary executable file named as `play`
+* Now your repository will have a directory named `bin` containing binary executable file named as `play`
 * Open `helper.h` in your text editor and understand which functions are already given.
 * Open `helper.c` to view the implementation of those function done previously
 
@@ -114,13 +116,32 @@ Open `main.c` in your text editor and you will see the following
 int main(int argc, char *argv[])
 ```
 This line indicates that the program expects **Command-Line Arguments**. Actually, the program expects an integer as it's argument. This integer represents the number of rows/columns in the board. Here we used a function `atoi()` which converts a string into equivalent integer.
-If you run the following
+
+If you do this:
 ```
-$ ./play 3
+./bin/play
+```
+It will generate error:
+```
+Usage: ./bin/play n
+n: Dimension of the Board
+```
+
+If you go through the `main` function you will notice the following:
+```
+if (N < DIM_MIN || N > DIM_MAX) {
+```
+`DIM_MIN` and `DIM_MAX` are two MACRO defined in `helper.h`, whose purpose in life is to give the minimum_(3)_ and maximum_(9)_ limit of the board size respectively.
+
+Instead, if you run the following
+```
+$ ./bin/play 3
 ```
 It will produce following result
 ```
 WELCOME TO GAME OF TIC_TAC_TOE
+
+...
 
   1 |  2 |  3
 --------------
@@ -131,10 +152,10 @@ WELCOME TO GAME OF TIC_TAC_TOE
 The program will ask the user for the position to put **`X`** or **`O`** and will act accordingly. In the end it will announce the winner, if any, or if it's a tie.
 
 ### Helper.H
-Navigate to `helper.h` and see the function prototypes given to you and their functionalities. You can also open `helper.c` and see the implementation of some of the functions. What happening during compile-time is the file `helper.c` is being compiled seperately and later being linked to `main.c` via `helper.h`. You will learn more about this [here](https://www.dartmouth.edu/~rc/classes/softdev_linux/complex_compile.html).
+Navigate to `helper.h` and see the Include directives, MACRO definitions and function prototypes given to you and their functionality. You can also open `helper.c` and see the implementation of some of the functions. What happening during compile-time is the file `helper.c` is being compiled separately and later being linked to `main.c` via `helper.h`. You will learn more about this [here](https://www.dartmouth.edu/~rc/classes/softdev_linux/complex_compile.html).
 
 ### Your Task
-Navigate to `hepler.c` and see the function mentioned as **`TODO`** (or you can view them in `Issue` tab). Your task is to complete the implementation of those methods and applying/calling them from your _**main**_ function. You have to create a simple data-structure to hold the board and modify according to the input by user. So that, after completion and compilation afterward it will work fine!
+Navigate to `hepler.c` and see the function mentioned as **`TODO`** (or you can view them in `Issue` tab). Your task is to complete the implementation of those methods and applying/calling them from your _**main**_ function. You may add some additional features to make it impressive to the user. In a way such that, after completion and compilation, it will work smooth and fine!
 
 ### How To Submit
 * Update your local repository with latest in the Club.
@@ -145,26 +166,30 @@ $ git checkout master
 $ git rebase upstream/master
 ```
 * Create a new branch in your local as well as remote repository
+```
+$ git checkout -b <your-branch>
+```
 * Complete the implementation of the functions mentioned as **TODO**
 * Complete the main function.
 * Compile and execute to be sure that it's working.
 * Execute the following
 ```
-$ git add .
+$ git add -A
 $ git commit
-shortlog: commit title
-commit description
-fixes: #issue_number
-signed-off by: your_name<email>
+Shortlog: Commit Title
+Commit description
+Fixes: #issue_number
+Signed-off-by: your_name <email>
 $ git push origin <branch-name>
 ```
 * **Your commit should not contain the binary executable file**
 * **Your commit should not make effect in master branch**
-* Create a `Pull Request` to the Club repository.
+* Create a `Pull Request` to the Club repository or send a email containing the `patch`.
 * Wait for a response from Club Heads.
 
 ### Reference
 [Contribution Guidelines](/CONTRIBUTING.md)
+
 [Code of Conduct](/CODE_OF_CONDUCT.md)
 
 #### Happy Coding :)

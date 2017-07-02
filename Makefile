@@ -11,6 +11,9 @@ CC = gcc
 # Flags for Compiler
 CFLAGS = -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wshadow 
 
+# Flags for Linker
+LFLAGS = -pg
+
 # Flags for Directories
 DIR = -I$(INC)
 
@@ -28,7 +31,7 @@ OBJECT = $(patsubst %,$(BIN)/%, $(notdir $(SOURCE:.c=.o)))
 
 # Default Target
 $(BIN)/$(EXE): $(OBJECT)
-	$(CC) $^ -o $@ -pg
+	$(CC) $^ -o $@
 
 $(BIN)/%.o: $(SRC)/%.c
 	@mkdir -p $(BIN)
