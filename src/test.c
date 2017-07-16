@@ -23,6 +23,7 @@ void human_vs_human()
 	printf("Enter the no. of rows (or columns) (between 3 and 9 - both inclusive): ");
 	do
 	{
+		//the piece of code which can be used as a solution to issue #43
 		error_human_1:
 		k=0;
 		free(s);
@@ -53,6 +54,7 @@ void human_vs_human()
 				goto error_human_1;
 			}
 		}
+		//piece of code ends here
 	}while(n<3 || n>9);
 	int *p1=(int*)calloc(n*n,sizeof(int));
 	int *p2=(int*)calloc(n*n,sizeof(int));
