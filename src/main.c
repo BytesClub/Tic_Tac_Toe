@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	int result = 0, pos, player = 0,i,sw=0;
+	int result = 0, pos, player = 0,i,avoid_error=0;
 	const char Tic[] = {'X', 'O'};
 	char Board[N * N],c;
 	char* s;
@@ -69,9 +69,9 @@ int main(int argc, char* argv[])
 					else
 						pos=((int)s[0]-'0')*10 + ((int)s[1]-'0');
 					break;
-				default:if(sw)
+				default:if(avoid_error)
 						printf(ANSI_YELLOW "Position can't have more than two digits.. Enter again...\n" ANSI_RESET);
-					if(sw == 0) sw = 1;
+					if(avoid_error == 0) avoid_error = 1;
 					goto error_pos;
 			}
 			pos--;
