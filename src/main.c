@@ -34,7 +34,8 @@ int main(int argc, char* argv[])
 	greet();
 
 	while (show(N, Board), !result) {
-		do {
+		do
+		{
 			printf("\nFor Player(\'%c\'):\n", Tic[player]);
 			printf("Enter Position (non-digit characters not allowed.. not even white spaces...): ");
 			goto init__1;
@@ -52,32 +53,29 @@ int main(int argc, char* argv[])
 			s[i] = '\0';
 			switch(strlen(s))
 			{
-				case 2:
-				if(!(isdigit(s[0])))
-				{
-					printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
+				case 2:if(!(isdigit(s[0])))
+					{
+						printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
+						goto error_pos;
+					}
+					else
+						pos=(int)s[0]-'0';
+					break;
+				case 3:if(!(isdigit(s[0])) || !(isdigit(s[1])))
+					{
+						printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
+						goto error_pos;
+					}
+					else
+						pos=((int)s[0]-'0')*10 + ((int)s[1]-'0');
+					break;
+				default:if(sw)
+						printf(ANSI_YELLOW "Position can't have more than two digits.. Enter again...\n" ANSI_RESET);
+					if(sw == 0) sw = 1;
 					goto error_pos;
-				}
-				else
-					pos=(int)s[0]-'0';
-				break;
-				case 3:
-				if(!(isdigit(s[0])) || !(isdigit(s[1])))
-				{
-					printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
-					goto error_pos;
-				}
-				else
-					pos=((int)s[0]-'0')*10 + ((int)s[1]-'0');
-				break;
-				default:
-				if(sw)
-					printf(ANSI_YELLOW "Position can't have more than two digits.. Enter again...\n" ANSI_RESET);
-				if(sw == 0) sw = 1;
-				goto error_pos;
 			}
 			pos--;
-		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
+		}while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
 		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
