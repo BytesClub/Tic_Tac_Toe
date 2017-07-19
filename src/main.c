@@ -34,48 +34,36 @@ int main(int argc, char* argv[])
 	greet();
 
 	while (show(N, Board), !result) {
-		do
-		{
+		do {
 			printf("\nFor Player(\'%c\'):\n", Tic[player]);
 			printf("Enter Position (non-digit characters not allowed.. not even white spaces...): ");
-			goto init__1;
-			error_pos: //in case invalid input is given
-			free(s);
-			init__1:
-			i=0;
-			s=malloc(1);
-			do
-			{
-				c = getchar();
-				s[i++] = c;
-				s = realloc(s,i+1);
-			}while(c != '\n' && c != EOF);
-			s[i] = '\0';
-			switch(strlen(s))
-			{
-				case 2:if(!(isdigit(s[0])))
-					{
-						printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
-						goto error_pos;
+			do {
+				i = 0;
+				s = malloc(1);
+				do {
+					c = getchar();
+					s[i++] = c;
+					s = realloc(s, i+1);
+				} while (c != '\n' && c != EOF);
+				s[i] = '\0';
+				if (strlen(s) < 2 || (strlen(s) == 2 && !(Isdigit(s[0]))) || (strlen(s) == 3 && (!(Isdigit(s[0])) || !(Isdigit(s[1])))) || strlen(s) > 3) {
+					if (avoid_error) {
+						printf("Wrong input.. Enter again...\n");
+					} else {
+						avoid_error = 1;
 					}
-					else
-						pos=(int)s[0]-'0';
-					break;
-				case 3:if(!(isdigit(s[0])) || !(isdigit(s[1])))
-					{
-						printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
-						goto error_pos;
+					free(s);
+				} else {
+					if (strlen(s) == 2) {
+						pos = (int)s[0]-'0';
+					} else {
+						pos = ((int)s[0]-'0')*10 + ((int)s[1]-'0');
 					}
-					else
-						pos=((int)s[0]-'0')*10 + ((int)s[1]-'0');
 					break;
-				default:if(avoid_error)
-						printf(ANSI_YELLOW "Position can't have more than two digits.. Enter again...\n" ANSI_RESET);
-					if(avoid_error == 0) avoid_error = 1;
-					goto error_pos;
-			}
+				}
+			} while (strlen(s) < 2 || (strlen(s) == 2 && !(Isdigit(s[0]))) || (strlen(s) == 3 && (!(Isdigit(s[0])) || !(Isdigit(s[1])))) || strlen(s) > 3);
 			pos--;
-		}while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
+		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
 		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
 		result = check(N, Board);
@@ -84,7 +72,7 @@ int main(int argc, char* argv[])
 	if(result == 1 || result == 2) {
 		printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
 	} else {
-		printf(ANSI_CYAN"\nMatch Tie !!!!!\n" ANSI_RESET);
+		printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);
 	}
 
 	return 0;

@@ -24,12 +24,6 @@
 #ifndef __string_h
 #include <string.h>
 #endif
-#ifndef __ctype_h
-#include <ctype.h>
-#endif
-#ifndef __stdlib_h
-#include <stdlib.h>
-#endif
 #ifndef __termios_h
 #include <termios.h>
 #endif
@@ -89,5 +83,10 @@ void disableRawMode();
  * Enable ECHO once done
  */
 void enableRawMode();
+
+/*
+ * To check whether a given character is a digit or not
+ */
+int Isdigit(char ch);
 
 #endif

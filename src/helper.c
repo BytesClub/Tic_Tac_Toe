@@ -62,6 +62,15 @@ void show(int n, char* A)
 	}
 }
 
+int Isdigit(char ch)
+{
+	if (ch >= '0' && ch <= '9') {
+		return -1;
+	} else {
+		return 0;
+	}
+}
+
 int check(int n, char* A)
 {
 	int row, col, flag = 0;
