@@ -19,12 +19,27 @@ void disableRawMode()
 }
 
 void enableRawMode()
-{	
+{
 	tcgetattr(STDIN_FILENO, &orig_termios);
 	atexit(disableRawMode);
 	struct termios raw = orig_termios;
 	raw.c_lflag &= ~(ECHO);
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+}
+
+void scand(int* a)
+{
+  register int q = 0, p, s = 1;
+  while ((p < '0' || p > '9') && p ^ '\n' && p ^ EOF && p ^ '-') {
+      p = get();
+  }
+  if (p == '-') {
+      s = -1, p = get();
+  }
+  while (p >= '0' && p <= '9') {
+      q = (q << 3) + (q << 1) + p - '0', p = get();
+  }
+  *a = q * s;
 }
 
 void greet(void)
@@ -35,8 +50,9 @@ void greet(void)
 	printf("Progyan Bhattacharya :- <bprogyan@gmail.com>\n");
 	printf("Rudra Nil Basu :- <rudra.nil.basu.1996@gmail.com>\n");
 	printf("Satyam Kumar :- <satyamvats5@gmail.com>\n");
-	printf("Amitava Mitra :- <mitraamitava7@gmail.com> \n"); 
-	printf("\nLoading. Please Wait..."), fflush(stdout);
+	printf("Amitava Mitra :- <mitraamitava7@gmail.com>\n");
+    printf("Sumit Kumar Mridha :- <3sumit5@gmail.com>\n");
+    printf("\nLoading. Please Wait..."), fflush(stdout);
 	enableRawMode();
 	SLEEP;
 	printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);

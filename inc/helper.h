@@ -21,9 +21,6 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
-#ifndef __string_h
-#include <string.h>
-#endif
 #ifndef __termios_h
 #include <termios.h>
 #endif
@@ -49,6 +46,12 @@
  */
 #define DIM_MIN 3
 #define DIM_MAX 9
+#define get getchar_unlocked
+
+/*
+ * Takes an integer from stdin
+ */
+void scand(int*);
 
 /*
  * Initialization of the Board
