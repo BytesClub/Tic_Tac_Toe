@@ -1,7 +1,7 @@
 # Tic_Tac_Toe
 A simple Tic_Tac_Toe implementation in C
 
-Copyright (C) BytesClub 2017
+&copy; All rights reserved by **Bytes Club 2017**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3efc459239d94d19ade57820e69b8d60)](https://www.codacy.com/app/BytesClub/Tic_Tac_Toe?utm_source=github.com&utm_medium=referral&utm_content=BytesClub/Tic_Tac_Toe&utm_campaign=badger)

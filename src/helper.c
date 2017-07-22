@@ -29,17 +29,14 @@ static void enableRawMode()
 
 inline void scand(int* a)
 {
-    register int q = 0, p = get(), s = 1;
-    while ((p < '0' || p > '9') && p ^ '\n' && p ^ EOF && p ^ '-') {
+    register int q = 0, p = get();
+    while ((p < '0' || p > '9') && p ^ EOF && p ^ '-') {
         p = get();
-    }
-    if (p == '-') {
-        s = -1, p = get();
     }
     while (p >= '0' && p <= '9') {
         q = (q << 3) + (q << 1) + p - '0', p = get();
     }
-    *a = q * s;
+    *a = q;
 }
 
 void greet(void)
