@@ -78,16 +78,6 @@ void show(int, char*);
 int check(int, char*);
 
 /*
- * Disable ECHO while working
- */
-void disableRawMode();
-
-/*
- * Enable ECHO once done
- */
-void enableRawMode();
-
-/*
  * To check whether a given character is a digit or not
  */
 int Isdigit(char ch);
