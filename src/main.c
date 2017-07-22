@@ -25,19 +25,41 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	int result = 0, pos, player = 0;
+	int result = 0, pos, player = 0, i, avoid_error = 0;
 	const char Tic[] = {'X', 'O'};
-	char Board[N * N];
+	char Board[N * N], c, *s;
 
 	init(N, Board);
 	greet();
 
 	while (show(N, Board), !result) {
-        printf("\nFor Player(\'%c\'):\n", Tic[player]);
+        	printf("\nFor Player(\'%c\'):\n", Tic[player]);
 		do {
-            printf("Enter Position: "), fflush(stdout);
-			scand(&pos);
-            pos--;
+            		printf("Enter Position (No non-digit characters allowed.. Not even white spaces..): ");
+			do {
+				i = 0;
+				s = malloc(1);
+				do {
+					c = getchar();
+					s[i++] = c;
+					s = realloc(s, i+1);
+				} while (c != '\n' && c != EOF);
+				if (strlen(s) < 2 || (strlen(s) == 2 && !(Isdigit(s[0]))) || (strlen(s) == 3 && (!(Isdigit(s[0])) || !(Isdigit(s[1])))) || strlen(s) > 3) {
+					if (avoid_error) {
+						printf(ANSI_YELLOW "Wrong input.. Enter again...\n" ANSI_RESET);
+					} else {
+						avoid_error = 1;
+					}
+					free(s);
+				} else {
+					if (strlen(s) == 2) {
+						pos = (int)s[0]-'0';
+					} else {
+						pos = ((int)s[0]-'0')*10 + ((int)s[1]-'0');
+					}
+				}
+			} while (strlen(s) < 2 || (strlen(s) == 2 && !(Isdigit(s[0]))) || (strlen(s) == 3 && (!(Isdigit(s[0])) || !(Isdigit(s[1])))) || strlen(s) > 3);
+            		pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
 		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
