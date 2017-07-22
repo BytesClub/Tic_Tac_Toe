@@ -18,6 +18,9 @@
 #ifndef __stdio_h
 #include <stdio.h>
 #endif
+#ifndef __string_h
+#include <string.h>
+#endif
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
