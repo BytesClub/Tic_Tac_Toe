@@ -12,9 +12,6 @@
 #ifndef __helper_h
 #define __helper_h
 
-#ifndef __assert_h
-#include <assert.h>
-#endif
 #ifndef __stdio_h
 #include <stdio.h>
 #endif
@@ -76,10 +73,5 @@ void show(int, char*);
  * Returns 0 otherwise
  */
 int check(int, char*);
-
-/*
- * To check whether a given character is a digit or not
- */
-int Isdigit(char ch);
 
 #endif

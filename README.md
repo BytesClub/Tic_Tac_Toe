@@ -132,7 +132,7 @@ If you go through the `main` function you will notice the following:
 ```
 if (N < DIM_MIN || N > DIM_MAX) {
 ```
-`DIM_MIN` and `DIM_MAX` are two MACRO defined in `helper.h`, whose purpose in life is to give the minimum_(3)_ and maximum_(9)_ limit of the board size respectively.
+`DIM_MIN` and `DIM_MAX` are two MACRO defined in `helper.h`, whose purpose in life is to give the minimum _(3)_ and maximum _(9)_ limit of the board size respectively.
 
 Instead, if you run the following
 ```

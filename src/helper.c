@@ -30,13 +30,16 @@ static void enableRawMode()
 inline void scand(int* a)
 {
     register int q = 0, p = get();
-    while ((p < '0' || p > '9') && p ^ EOF && p ^ '-') {
-        p = get();
-    }
     while (p >= '0' && p <= '9') {
         q = (q << 3) + (q << 1) + p - '0', p = get();
     }
-    *a = q;
+    if (p == '\n' || p == EOF) {
+        *a = q;
+        return;
+    }
+    while (p ^ '\n' && p ^ EOF) {
+        p = get();
+    }
 }
 
 void greet(void)
@@ -86,15 +89,6 @@ void show(int n, char* A)
         for (int j = 0; !(i + 1 == n) && (j < n || !putchar('\n')); j++)
             printf("-----");
         printf(ANSI_RESET);
-    }
-}
-
-int Isdigit(char ch)
-{
-    if (ch >= '0' && ch <= '9') {
-        return -1;
-    } else {
-        return 0;
     }
 }
 
