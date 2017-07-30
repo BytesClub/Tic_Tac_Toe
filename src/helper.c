@@ -57,6 +57,7 @@ void greet(void)
     SLEEP;
     printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
     scanf("%*[^\n]%*1[\n]");
+    get();
     disableRawMode();
 }
 

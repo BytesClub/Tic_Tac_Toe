@@ -31,13 +31,12 @@ int main(int argc, char* argv[])
 
 	init(N, Board);
 	greet();
-	getchar();
 	while (show(N, Board), !result) {
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
 		do {
             printf("Enter Position: "), fflush(stdout);
 			fflush(stdin);
-			
+
 			scand(&pos);
             pos--;
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
