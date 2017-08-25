@@ -11,6 +11,8 @@
 #include <helper.h>
 #endif
 
+#ifdef __termios_h
+
 struct termios orig_termios;
 
 static void disableRawMode()
@@ -26,6 +28,8 @@ static void enableRawMode()
     raw.c_lflag &= ~(ECHO);
     tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
 }
+
+#endif
 
 inline void scand(int* a)
 {
@@ -53,12 +57,16 @@ void greet(void)
     printf("Amitava Mitra :- <mitraamitava7@gmail.com>\n");
     printf("Sumit Kumar Mridha :- <3sumit5@gmail.com>\n");
     printf("\nLoading. Please Wait..."), fflush(stdout);
+    #ifdef __termios_h
     enableRawMode();
+    #endif
     SLEEP;
     printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
     scanf("%*[^\n]%*1[\n]");
     get();
+    #ifdef __termios_h
     disableRawMode();
+    #endif
 }
 
 void init(int n, char* A)

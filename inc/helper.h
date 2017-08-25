@@ -18,9 +18,6 @@
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
-#ifndef __termios_h
-#include <termios.h>
-#endif
 #ifndef __color_h
 #include <color.h>
 #endif
@@ -31,6 +28,9 @@
 #define CLEAR system("cls")
 #endif
 #else
+#ifndef __termios_h
+#include <termios.h>
+#endif
 #ifndef __unistd_h
 #include <unistd.h>
 #define SLEEP sleep(5)
@@ -43,7 +43,11 @@
  */
 #define DIM_MIN 3
 #define DIM_MAX 9
+#ifdef getchar_unlocked
 #define get getchar_unlocked
+#else
+#define get getchar
+#endif
 
 /*
  * Takes an integer from stdin
