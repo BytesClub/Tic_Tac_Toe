@@ -57,16 +57,16 @@ void greet(void)
     printf("Amitava Mitra        :- <mitraamitava7@gmail.com>\n");
     printf("Sumit Kumar Mridha   :- <3sumit5@gmail.com>\n");
     printf("\nLoading. Please Wait..."), fflush(stdout);
-    #ifdef __termios_h
+#ifdef __termios_h
     enableRawMode();
-    #endif
+#endif
     SLEEP;
     printf("\rLoading Completed. Press ENTER to continue... "), fflush(stdout);
     scanf("%*[^\n]%*1[\n]");
     get();
-    #ifdef __termios_h
+#ifdef __termios_h
     disableRawMode();
-    #endif
+#endif
 }
 
 void init(int n, char* A)

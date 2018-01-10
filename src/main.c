@@ -14,17 +14,17 @@
 int main(int argc, char* argv[])
 {
     bool BOT = false;
-	if (argc > 3) {
-		printf(ANSI_BLUE "Usage: %s n [0/1:BOT]\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
-		return EXIT_FAILURE;
-	}
+    if (argc > 3) {
+        printf(ANSI_BLUE "Usage: %s n [0/1:BOT]\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
+        return EXIT_FAILURE;
+    }
 
-	int N = argc > 1 ? atoi(argv[1]) : DIM_MIN;
-	if (N < DIM_MIN || N > DIM_MAX) {
-		printf(ANSI_RED "Fatal Error: Board dimension - Out of range\n" ANSI_RESET "Range: [%d, %d]\n",
-		        DIM_MIN, DIM_MAX);
-		return EXIT_FAILURE;
-	}
+    int N = argc > 1 ? atoi(argv[1]) : DIM_MIN;
+    if (N < DIM_MIN || N > DIM_MAX) {
+        printf(ANSI_RED "Fatal Error: Board dimension - Out of range\n" ANSI_RESET "Range: [%d, %d]\n",
+                DIM_MIN, DIM_MAX);
+        return EXIT_FAILURE;
+    }
 
     int human;
     if (argc == 3) {
@@ -33,35 +33,35 @@ int main(int argc, char* argv[])
         srand(time(NULL));
     }
 
-	int result = 0, pos, player = 0;
-	const char Tic[] = {'X', 'O'};
-	char Board[N * N];
+    int result = 0, pos, player = 0;
+    const char Tic[] = {'X', 'O'};
+    char Board[N * N];
 
-	init(N, Board);
-	greet();
-	while (show(N, Board), !result) {
+    init(N, Board);
+    greet();
+    while (show(N, Board), !result) {
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
-		do {
+        do {
             if (BOT && (player == human)) {
                 do {
                     pos = rand() % (N * N);
                 } while (Board[pos]);
             } else {
                 printf("Enter Position: "), fflush(stdout);
-			    scand(&pos);
+                scand(&pos);
                 pos--;
             }
-		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
-		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
-		Board[pos] = Tic[player], player = !player;
-		result = check(N, Board);
-	}
+        } while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
+                printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
+        Board[pos] = Tic[player], player = !player;
+        result = check(N, Board);
+    }
 
-	if(result == 1 || result == 2) {
-		printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
-	} else {
-		printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);
-	}
+    if(result == 1 || result == 2) {
+        printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
+    } else {
+        printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);
+    }
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
