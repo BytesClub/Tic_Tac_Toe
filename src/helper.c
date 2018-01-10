@@ -51,11 +51,11 @@ void greet(void)
     CLEAR;
     printf("WELCOME TO GAME OF TIC_TAC_TOE\nCreated by: Bytes Club\n\n");
     printf("Contributers:-\n\n");
-    printf("Progyan Bhattacharya :- <bprogyan@gmail.com>\n");
-    printf("Rudra Nil Basu :- <rudra.nil.basu.1996@gmail.com>\n");
-    printf("Satyam Kumar :- <satyamvats5@gmail.com>\n");
-    printf("Amitava Mitra :- <mitraamitava7@gmail.com>\n");
-    printf("Sumit Kumar Mridha :- <3sumit5@gmail.com>\n");
+    printf("Progyan Bhattacharya :- <progyanb@acm.org>\n");
+    printf("Rudra Nil Basu       :- <rudra.nil.basu.1996@gmail.com>\n");
+    printf("Satyam Kumar         :- <satyamvats5@gmail.com>\n");
+    printf("Amitava Mitra        :- <mitraamitava7@gmail.com>\n");
+    printf("Sumit Kumar Mridha   :- <3sumit5@gmail.com>\n");
     printf("\nLoading. Please Wait..."), fflush(stdout);
     #ifdef __termios_h
     enableRawMode();

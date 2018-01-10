@@ -12,14 +12,20 @@
 #ifndef __helper_h
 #define __helper_h
 
+#ifndef __color_h
+#include <color.h>
+#endif
+#ifndef __stdbool_h
+#include <stdbool.h>
+#endif
 #ifndef __stdio_h
 #include <stdio.h>
 #endif
 #ifndef __stdlib_h
 #include <stdlib.h>
 #endif
-#ifndef __color_h
-#include <color.h>
+#ifndef __time_h
+#include <time.h>
 #endif
 #if defined(_WIN32) || defined(__WIN32__)
 #ifndef __windows_h

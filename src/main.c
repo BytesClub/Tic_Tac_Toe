@@ -13,8 +13,9 @@
 
 int main(int argc, char* argv[])
 {
-	if (argc != 2) {
-		printf(ANSI_BLUE "Usage: %s n\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
+    bool BOT = false;
+	if (argc != 2 && argc != 3) {
+		printf(ANSI_BLUE "Usage: %s n [0]\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
 		return 1;
 	}
 
@@ -25,6 +26,11 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+    if (argc == 3) {
+        BOT = true;
+        srand(time(NULL));
+    }
+
 	int result = 0, pos, player = 0;
 	const char Tic[] = {'X', 'O'};
 	char Board[N * N];
@@ -34,9 +40,15 @@ int main(int argc, char* argv[])
 	while (show(N, Board), !result) {
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
 		do {
-            printf("Enter Position: "), fflush(stdout);
-			scand(&pos);
-            pos--;
+            if (BOT && player) {
+                do {
+                    pos = rand() % (N * N);
+                } while (Board[pos]);
+            } else {
+                printf("Enter Position: "), fflush(stdout);
+			    scand(&pos);
+                pos--;
+            }
 		} while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
 		          printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
 		Board[pos] = Tic[player], player = !player;
