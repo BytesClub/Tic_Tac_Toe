@@ -84,4 +84,14 @@ void show(int, char*);
  */
 int check(int, char*);
 
+/*
+ * Updates Board State into Cache
+ */
+void newState(int, const char*);
+
+/*
+ * Log the States and Result
+ */
+void setResult(int, int);
+
 #endif

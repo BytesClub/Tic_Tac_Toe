@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 
     init(N, Board);
     greet();
-    while (show(N, Board), !result) {
+    while (show(N, Board), ! result) {
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
         do {
             if (BOT && (player == human)) {
@@ -53,7 +53,8 @@ int main(int argc, char* argv[])
             }
         } while ((pos < 0 || pos >= N * N || Board[pos] != '\0') &&
                 printf(ANSI_YELLOW "Error: Invalid position.\n" ANSI_RESET));
-        Board[pos] = Tic[player], player = !player;
+        Board[pos] = Tic[player], player = ! player;
+        newState(N, Board);
         result = check(N, Board);
     }
 
@@ -62,6 +63,7 @@ int main(int argc, char* argv[])
     } else {
         printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);
     }
+    setResult(N, result);
 
     return EXIT_SUCCESS;
 }
