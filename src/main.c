@@ -14,20 +14,22 @@
 int main(int argc, char* argv[])
 {
     bool BOT = false;
-	if (argc != 2 && argc != 3) {
-		printf(ANSI_BLUE "Usage: %s n [0]\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
-		return 1;
+	if (argc > 3) {
+		printf(ANSI_BLUE "Usage: %s n [0/1:BOT]\n" ANSI_RESET "n: Dimension of the Board\n", argv[0]);
+		return EXIT_FAILURE;
 	}
 
-	int N = atoi(argv[1]);
+	int N = argc > 1 ? atoi(argv[1]) : DIM_MIN;
 	if (N < DIM_MIN || N > DIM_MAX) {
 		printf(ANSI_RED "Fatal Error: Board dimension - Out of range\n" ANSI_RESET "Range: [%d, %d]\n",
 		        DIM_MIN, DIM_MAX);
-		return 1;
+		return EXIT_FAILURE;
 	}
 
+    int human;
     if (argc == 3) {
         BOT = true;
+        human = atoi(argv[2]) == 0;
         srand(time(NULL));
     }
 
@@ -40,7 +42,7 @@ int main(int argc, char* argv[])
 	while (show(N, Board), !result) {
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
 		do {
-            if (BOT && player) {
+            if (BOT && (player == human)) {
                 do {
                     pos = rand() % (N * N);
                 } while (Board[pos]);
@@ -61,5 +63,5 @@ int main(int argc, char* argv[])
 		printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }
