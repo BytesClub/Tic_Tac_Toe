@@ -43,9 +43,7 @@ int main(int argc, char* argv[])
         printf("\nFor Player(\'%c\'):\n", Tic[player]);
         do {
             if (BOT && (player == human)) {
-                do {
-                    pos = rand() % (N * N);
-                } while (Board[pos]);
+                pos = moveAI(N, Board);
             } else {
                 printf("Enter Position: "), fflush(stdout);
                 scand(&pos);
@@ -58,7 +56,7 @@ int main(int argc, char* argv[])
         result = check(N, Board);
     }
 
-    if(result == 1 || result == 2) {
+    if (result == 1 || result == 2) {
         printf(ANSI_GREEN "\nCongrats Player(\'%c\') wins\n" ANSI_RESET, Tic[result - 1]);
     } else {
         printf(ANSI_CYAN "\nMatch Tie !!!!!\n" ANSI_RESET);

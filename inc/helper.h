@@ -94,4 +94,9 @@ void newState(int, const char*);
  */
 void setResult(int, int);
 
+/*
+ * Returns a move according to board
+ */
+int moveAI(int, const char*);
+
 #endif

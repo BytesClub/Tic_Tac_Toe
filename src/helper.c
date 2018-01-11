@@ -11,11 +11,7 @@
 #include <helper.h>
 #endif
 
-static char State[DIM_MAX * DIM_MAX][DIM_MAX * DIM_MAX];
-static int k = 0;
-
 #ifdef __termios_h
-
 struct termios orig_termios;
 
 static void disableRawMode()
@@ -31,7 +27,6 @@ static void enableRawMode()
     raw.c_lflag &= ~(ECHO);
     tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
 }
-
 #endif
 
 inline void scand(int* a)
@@ -159,31 +154,4 @@ int check(int n, char* A)
     }
     // Match is on
     return 0;
-}
-
-// Add new state of board
-void newState(int n, const char* Board)
-{
-    for (int i = 0, l = n * n; i < l; i++) {
-        State[k][i] = Board[i] ? Board[i] : '-';
-    }
-    k++;
-}
-
-// Write results and states in log file
-void setResult(int n, int result)
-{
-    FILE* log = fopen("log.txt", "a+");
-    if (log == NULL) {
-        return;
-    }
-    for (int i = 0; i < k; i++) {
-        int l = n * n;
-        fprintf(log, "%d ", l);
-        for (int j = 0; j < l; j++) {
-            fputc(State[i][j], log);
-        }
-        fprintf(log, " %d\n", result);
-    }
-    fclose(log);
 }

@@ -6,3 +6,17 @@
 9 OX-XX---O 1
 9 OX-XXO--O 1
 9 OX-XXO-XO 1
+9 -X------- 1
+9 -XO------ 1
+9 -XOX----- 1
+9 -XOX-O--- 1
+9 -XOX-O--X 1
+9 OXOX-O--X 1
+9 OXOX-O-XX 1
+9 OXOXOO-XX 1
+9 OXOXOOXXX 1
+9 --X------ 1
+9 --XO----- 1
+9 --XOX---- 1
+9 -OXOX---- 1
+9 -OXOX-X-- 1
